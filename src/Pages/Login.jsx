@@ -9,7 +9,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const { signIn, signInGoogle } = useContext(AuthContext);
+  const { signIn, signInGoogle ,signInGithub} = useContext(AuthContext);
 
   // email sign in
   const handelSignIn = async e => {
@@ -39,6 +39,19 @@ toast.error(err?.message)
   const handelGooglesignIn = async() => {
     try {
       await signInGoogle()
+      toast.success("SignIn Successful");
+      navigate('/')
+    }
+    catch (err){
+      console.log(err)
+      toast.error(err?.message);
+    }
+  }
+  
+  // github login
+  const handelGithubLogin = async() => {
+    try {
+      await signInGithub()
       toast.success("SignIn Successful");
       navigate('/')
     }
@@ -111,7 +124,7 @@ toast.error(err?.message)
                   <FaGoogle />
                 </button>
 
-                <button className="text-2xl ">
+                <button onClick={handelGithubLogin} className="text-2xl ">
                   
                   <FaGithub />
                 </button>

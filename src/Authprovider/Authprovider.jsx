@@ -27,10 +27,15 @@ const Authprovider = ({children}) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
     
-
+// google login
     const signInGoogle = () => {
         setLoading(true);
         return signInWithPopup(auth,googleProvider)
+    }
+    // github login
+    const signInGithub = () => {
+        setLoading(true);
+        return signInWithPopup(auth,githubProvider)
     }
 
 
@@ -62,7 +67,7 @@ const Authprovider = ({children}) => {
 
 
     const allInfo = {
-        user,loading,creatUser,signIn,signInGoogle,logOut,setUser,updateProfile
+        user,loading,creatUser,signIn,signInGoogle,logOut,setUser,updateProfile,signInGithub
     }
 
     return (
