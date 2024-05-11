@@ -1,10 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
-import { FaGithub, FaGoogle } from "react-icons/fa";
-import { useContext } from "react";
+import { FaEyeSlash, FaGithub, FaGoogle, FaRegEye } from "react-icons/fa";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Authprovider/Authprovider";
 import { toast } from "react-toastify";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   const navigate = useNavigate();
 
   const { signIn, signInGoogle } = useContext(AuthContext);
@@ -67,6 +69,8 @@ toast.error(err?.message)
                   required
                 />
               </div>
+
+              <div className="relative">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
@@ -83,7 +87,19 @@ toast.error(err?.message)
                     Forgot password?
                   </a>
                 </label>
-              </div>
+                </div>
+                
+                <span
+                  className="absolute top-12 right-3"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <FaEyeSlash></FaEyeSlash>
+                  ) : (
+                    <FaRegEye></FaRegEye>
+                  )}
+                </span>
+             </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>

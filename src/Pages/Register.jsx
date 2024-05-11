@@ -1,12 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Authprovider/Authprovider";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
+import { FaEyeSlash, FaRegEye } from "react-icons/fa";
 
 const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const { user, creatUser,setUser } = useContext(AuthContext);
+  const { user, creatUser, setUser } = useContext(AuthContext);
 
   // register
   const handelsignUp = async (e) => {
@@ -16,20 +18,30 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log({photo,name,email,password})
+    console.log({ photo, name, email, password });
 
     try {
-      const result = await creatUser(email, password)
-      console.log(result)
-       await updateProfile(name,photo)
-      setUser({...user,photoUrl:photo,displayName:name})
-      navigate('/')
-      toast.success('SignUp Successful')
+      // password validation
+      if (password.length < 6) {
+        toast.warn("Password at least 6 character");
+        return;
+      } else if (!/[A-Z]/.test(password)) {
+        toast.warn("Password Must have an Uppercase letter");
+        return;
+      } else if (!/[a-z]/.test(password)) {
+        toast.warn("Password Must have an Lowercase letter");
+        return;
+      }
+      const result = await creatUser(email, password);
+      console.log(result);
+      await updateProfile(name, photo);
+      setUser({ ...user, photoUrl: photo, displayName: name });
+      navigate("/");
+      toast.success("SignUp Successful");
     } catch (err) {
-      console.log(err)
-      toast.error(err?.message)
-}
-
+      console.log(err);
+      toast.error(err?.message);
+    }
   };
 
   return (
@@ -38,14 +50,14 @@ const Register = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handelsignUp} className="card-body">
-
-            <div className="form-control">
+              <div className="form-control">
                 <label className="label">
                   <span className="label-text">Photo Url</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Photo Url" name="photo"
+                  placeholder="Photo Url"
+                  name="photo"
                   className="input input-bordered"
                   required
                 />
@@ -81,17 +93,30 @@ const Register = () => {
                   required
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  name="password"
-                  className="input input-bordered"
-                  required
-                />
+
+              <div className="relative">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="password"
+                    name="password"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+                <span
+                  className="absolute top-12 right-3"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <FaEyeSlash></FaEyeSlash>
+                  ) : (
+                    <FaRegEye></FaRegEye>
+                  )}
+                </span>
               </div>
 
               <div className="form-control mt-6">

@@ -4,8 +4,8 @@ import { useContext } from "react";
 import { AuthContext } from "../Authprovider/Authprovider";
 
 const Navber = () => {
-  const { user,logOut } = useContext(AuthContext);
-console.log(user)
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
   return (
     <div className="">
       <div className="navbar rounded-lg bg-base-100">
@@ -37,21 +37,17 @@ console.log(user)
               <li>
                 <Link to={"/all-job"}>All Jobs</Link>
               </li>
-             
-              
-            {
-              user && <span> 
-                 <li>
+
+              {  user&& <li>
               <Link to={"/applied-jobs"}>Applied Jobs</Link>
-            </li>
-            <li>
+            </li>}
+
+           {user&& <li>
               <Link to={"/add-job"}>Add Job</Link>
-            </li>
-            <li>
+            </li>}
+            {user&&<li>
               <Link to={"/my-job"}>My Jobs</Link>
-            </li>
-            </span>
-           }
+            </li>}
 
               <li>
                 <Link to={"/blogs"}>Blogs</Link>
@@ -74,19 +70,16 @@ console.log(user)
               <Link to={"/all-job"}>All Jobs</Link>
             </li>
 
-            {
-              user && <div>
-                 <li>
+         {  user&& <li>
               <Link to={"/applied-jobs"}>Applied Jobs</Link>
-            </li>
-            <li>
+            </li>}
+
+           {user&& <li>
               <Link to={"/add-job"}>Add Job</Link>
-            </li>
-            <li>
+            </li>}
+            {user&&<li>
               <Link to={"/my-job"}>My Jobs</Link>
-            </li>
-              </div>
-           }
+            </li>}
 
             <li>
               <Link to={"/blogs"}>Blogs</Link>
@@ -99,18 +92,27 @@ console.log(user)
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost btn-circle avatar tooltip tooltip-left" data-tip={user.displayName}
+                className="btn btn-ghost btn-circle avatar tooltip tooltip-left"
+                data-tip={user.displayName}
               >
-
-
                 <div className="w-10 rounded-full ">
                   <img
                     alt="Tailwind CSS Navbar component"
-                    src={user?.photoURL ||<img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />}
+                    src={
+                      user?.photoURL || (
+                        <img
+                          alt="Tailwind CSS Navbar component"
+                          src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                        />
+                      )
+                    }
                   />
                 </div>
               </div>
-              <button onClick={logOut} className="text-white font-lato font-semibold px-3 bg-green-500 py-2 rounded-lg">
+              <button
+                onClick={logOut}
+                className="text-white font-lato font-semibold px-3 bg-green-500 py-2 rounded-lg"
+              >
                 Log Out
               </button>
             </div>
