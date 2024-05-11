@@ -8,12 +8,12 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import Slider from "./Slider";
+
 import { Link } from "react-router-dom";
 
 export default function Carousel() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto  ">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -29,7 +29,8 @@ export default function Carousel() {
         className="mySwiper"
           >
               {/* slider 1 */}
-        <SwiperSlide>
+           
+              <SwiperSlide>
           <div
             className="w-full bg-center bg-cover h-[38rem]"
             style={{
@@ -53,6 +54,7 @@ export default function Carousel() {
             </div>
           </div>
               </SwiperSlide>
+          
               
               {/* slider 2 */}
         <SwiperSlide>
@@ -83,7 +85,7 @@ export default function Carousel() {
               {/* slider 3 */}
         <SwiperSlide>
           <div
-            className="w-full bg-center bg-cover h-[38rem]"
+            className="w-full bg-center bg-cover h-[38rem] "
             style={{
               backgroundImage: `url("https://i.ibb.co/23SMtcJ/Getty-Images-1186079153.jpg")`,
             }}

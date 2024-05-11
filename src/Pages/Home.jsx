@@ -1,10 +1,12 @@
 import Carousel from "../Carosol/Carousel";
+import PopularJobCatagories from "../ExtraSection/PopularJobCatagories";
 
 
 const Home = () => {
     return (
         <div>
-          <Carousel></Carousel>
+        <Carousel></Carousel>
+        <PopularJobCatagories></PopularJobCatagories>
         </div>
     );
 };
