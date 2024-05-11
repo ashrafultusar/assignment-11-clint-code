@@ -7,8 +7,8 @@ const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
   return (
-    <div className="container mx-auto">
-      <div className="navbar rounded-lg bg-base-100">
+    <div className="bg-[#02251e]">
+      <div className="navbar rounded-lg text-white container mx-auto mb-4">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +29,7 @@ const Navber = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  font-lato font-bold rounded-box w-44"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-white bg-[#02251e]  font-lato font-bold rounded-box w-44"
             >
               <li>
                 <Link to={"/"}>Home</Link>
@@ -62,7 +62,7 @@ const Navber = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex ">
-          <ul className="menu  font-lato font-bold menu-horizontal px-1">
+          <ul className="menu text-white font-lato font-bold menu-horizontal px-1">
             <li>
               <Link to={"/"}>Home</Link>
             </li>

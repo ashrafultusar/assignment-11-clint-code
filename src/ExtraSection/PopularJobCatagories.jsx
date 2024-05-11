@@ -2,7 +2,7 @@ const PopularJobCatagories = () => {
   return (
     <div className="my-10 container mx-auto ">
       <h1 className="text-4xl font-lato font-bold my-6 text-center">
-        Popular Job Categories
+       Find Popular Job 
       </h1>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
