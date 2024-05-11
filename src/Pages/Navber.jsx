@@ -7,7 +7,7 @@ const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
   return (
-    <div className="">
+    <div className="container mx-auto">
       <div className="navbar rounded-lg bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -56,12 +56,12 @@ const Navber = () => {
           </div>
           <div className="flex">
             <img className="w-16 rounded-full" src={logo} alt="" />
-            <a className="btn btn-ghost text-xl md:flex hidden text-white">
+            <a className="btn btn-ghost text-xl   text-white">
               CAREERNESTLE
             </a>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex ">
           <ul className="menu  font-lato font-bold menu-horizontal px-1">
             <li>
               <Link to={"/"}>Home</Link>

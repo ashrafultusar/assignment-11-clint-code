@@ -18,7 +18,7 @@ export default function Carousel() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -40,14 +40,14 @@ export default function Carousel() {
             <div className="flex items-center justify-center w-full h-full bg-gray-900/70">
               <div className="text-center">
                 <h1 className="text-3xl font-semibold text-white lg:text-4xl">
-                  Build your new <span className="text-blue-400">Saas</span>{" "}
-                  Project
+                Let's Find Jobs for You
                 </h1>
+                <p className="text-white ">There's no need to look anywhere else. With over 1 million jobs, ZipRecruiter <br /> is the only site you'll ever need to find your next job.</p>
                 <br />
 
                 <Link to={"/all-job"}>
                   <button className="w-full px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-600 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
-                    Applied Job
+                    Find You Job
                   </button>
                 </Link>
               </div>
@@ -67,14 +67,14 @@ export default function Carousel() {
             <div className="flex items-center justify-center w-full h-full bg-gray-900/70">
               <div className="text-center">
                 <h1 className="text-3xl font-semibold text-white lg:text-4xl">
-                  Build your new <span className="text-blue-400">Saas</span>{" "}
-                  Project
+                Let's Find Jobs for You
                 </h1>
+                <p className="text-white ">There's no need to look anywhere else. With over 1 million jobs, ZipRecruiter <br /> is the only site you'll ever need to find your next job.</p>
                 <br />
 
                 <Link to={"/all-job"}>
                   <button className="w-full px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-600 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
-                    Applied Job
+                  Find You Job
                   </button>
                 </Link>
               </div>
@@ -93,14 +93,14 @@ export default function Carousel() {
             <div className="flex items-center justify-center w-full h-full bg-gray-900/70">
               <div className="text-center">
                 <h1 className="text-3xl font-semibold text-white lg:text-4xl">
-                  Build your new <span className="text-blue-400">Saas</span>{" "}
-                  Project
+                Let's Find Jobs for You
                 </h1>
+                <p className="text-white ">There's no need to look anywhere else. With over 1 million jobs, ZipRecruiter <br />is the only site you'll ever need to find your next job.</p>
                 <br />
 
                 <Link to={"/all-job"}>
                   <button className="w-full px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-600 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
-                    Applied Job
+                  Find You Job
                   </button>
                 </Link>
               </div>

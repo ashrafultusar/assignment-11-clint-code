@@ -3,12 +3,14 @@ import JobSearch from "../ExtraSection/JobSearch";
 import PopularJobCatagories from "../ExtraSection/PopularJobCatagories";
 
 
+
 const Home = () => {
     return (
         <div>
         <Carousel></Carousel>
         <PopularJobCatagories></PopularJobCatagories>
         <JobSearch></JobSearch>
+      
         </div>
     );
 };
