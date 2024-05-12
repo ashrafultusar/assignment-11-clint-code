@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../src/assets/logo.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../Authprovider/Authprovider";
@@ -32,25 +32,25 @@ const Navber = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-white bg-[#02251e]  font-lato font-bold rounded-box w-44"
             >
               <li>
-                <Link to={"/"}>Home</Link>
+                <NavLink to={"/"} activeClassName="active-link"  >Home</NavLink>
               </li>
               <li>
-                <Link to={"/all-job"}>All Jobs</Link>
+                <NavLink to={"/all-job"}>All Jobs</NavLink>
               </li>
 
               {  user&& <li>
-              <Link to={"/applied-jobs"}>Applied Jobs</Link>
+              <NavLink to={"/applied-jobs"}>Applied Jobs</NavLink>
             </li>}
 
            {user&& <li>
-              <Link to={"/add-job"}>Add Job</Link>
+              <NavLink to={"/add-job"} >Add Job</NavLink>
             </li>}
             {user&&<li>
-              <Link to={"/my-job"}>My Jobs</Link>
+              <NavLink to={"/my-job"}>My Jobs</NavLink>
             </li>}
 
               <li>
-                <Link to={"/blogs"}>Blogs</Link>
+                <NavLink to={"/blogs"}>Blogs</NavLink>
               </li>
             </ul>
           </div>
@@ -64,25 +64,25 @@ const Navber = () => {
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu text-white font-lato font-bold menu-horizontal px-1">
             <li>
-              <Link to={"/"}>Home</Link>
+              <NavLink to={"/"}>Home</NavLink>
             </li>
             <li>
-              <Link to={"/all-job"}>All Jobs</Link>
+              <NavLink to={"/all-job"}>All Jobs</NavLink>
             </li>
 
          {  user&& <li>
-              <Link to={"/applied-jobs"}>Applied Jobs</Link>
+              <NavLink to={"/applied-jobs"}>Applied Jobs</NavLink>
             </li>}
 
            {user&& <li>
-              <Link to={"/add-job"}>Add Job</Link>
+              <NavLink to={"/add-job"}>Add Job</NavLink>
             </li>}
             {user&&<li>
-              <Link to={"/my-job"}>My Jobs</Link>
+              <NavLink to={"/my-job"}>My Jobs</NavLink>
             </li>}
 
             <li>
-              <Link to={"/blogs"}>Blogs</Link>
+              <NavLink to={"/blogs"}>Blogs</NavLink>
             </li>
           </ul>
         </div>

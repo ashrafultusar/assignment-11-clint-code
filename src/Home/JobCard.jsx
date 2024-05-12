@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const JobCard = ({ job }) => {
   console.log(job);
 
-  const {
+  const {_id,
     postedName,
     JobTitle,
     JobPostingDate,
@@ -29,7 +31,7 @@ const JobCard = ({ job }) => {
           </h1>
 
           <p className="mt-2 text-sm text-gray-600 ">
-            Dedline: {ApplicationDeadline}
+            Post Date: {JobPostingDate}
           </p>
 
           <p className="mt-2 text-sm font-bold text-gray-600 ">
@@ -37,7 +39,10 @@ const JobCard = ({ job }) => {
           </p>
           <div className="flex justify-between items-center ">
             <p>Posted: {postedName}</p>
+            <Link to={`/job/${_id}`}>
             <button className="bg-green-500 rounded-full px-2 text-sm font-bold font-lato py-1">View Details</button>
+            </Link>
+            
           </div>
         </div>
       </div>
