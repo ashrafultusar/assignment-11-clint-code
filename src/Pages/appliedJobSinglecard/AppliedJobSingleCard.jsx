@@ -1,4 +1,14 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Authprovider/Authprovider";
+
 const AppliedJobSingleCard = ({ j }) => {
+    const [filter, setFilter] = useState([]);
+    const { user } = useContext(AuthContext) || {};
+// console.log(user)
+    console.log(j)
+    
+   
+
   const {
     phot,
     postName,
@@ -11,8 +21,13 @@ const AppliedJobSingleCard = ({ j }) => {
     Salary,
   } = j;
 
+    // filter section
+  
+    
   return (
-    <div className="container mx-auto">
+      <div className="container mx-auto">
+          
+
       <div className="overflow-x-auto bg-[#fff2f2] rounded-xl ">
         <table className="table">
           <tbody>
@@ -21,7 +36,7 @@ const AppliedJobSingleCard = ({ j }) => {
                 <div className="flex items-center gap-3">
                   <div className="avatar">
                     <div className="mask mask-squircle w-40 h-32">
-                      <img src={j.phot} alt="Avatar Tailwind CSS Component" />
+                      <img src={phot} alt="Avatar Tailwind CSS Component" />
                     </div>
                   </div>
                   <div>
