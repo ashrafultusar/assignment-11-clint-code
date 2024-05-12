@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const JobCard = ({ job }) => {
-  console.log(job);
+  // console.log(job);
 
   const {_id,
     postedName,
@@ -12,10 +12,10 @@ const JobCard = ({ job }) => {
     JobApplicantsNumber,
   } = job || {};
 
-  console.log(job);
+  // console.log(job);
   return (
     <div>
-      <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all">
+      <div className="w-full bg-[#e2e8ff] max-w-sm px-4 py-3  rounded-md shadow-md hover:scale-[1.05] transition-all">
         <div className="flex items-center justify-between">
           <span className="text-xs font-light text-gray-800 ">
             Deadline: {ApplicationDeadline}
