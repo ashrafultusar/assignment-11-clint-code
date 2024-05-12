@@ -1,16 +1,22 @@
 import { useLoaderData } from "react-router-dom";
 import AppliedJobSingleCard from "./appliedJobSinglecard/AppliedJobSingleCard";
+import { AuthContext } from "../Authprovider/Authprovider";
+import { useContext, useState } from "react";
 
 const AppliedJob = () => {
     const jobs = useLoaderData();
+    const [filter, setFilter] = useState([]);
+    const { user } = useContext(AuthContext) || {};
+
+
     const handelFilter = (e) => {
         if (e === "all") {
-          setFilter(j);
+          setFilter(jobs);
         } else if (e === "Part-Time") {
-          const yes = j.filter((user) => user.Category === "Part-Time");
+          const yes = jobs.filter((user) => user.Category === "Part-Time");
           setFilter(yes);
         } else if (e === "no") {
-          const no = j.filter((user) => user.Category === "No");
+          const no = jobs.filter((user) => user.Category === "No");
           setFilter(no);
         }
       };
@@ -48,7 +54,7 @@ const AppliedJob = () => {
 </div>
 
 
-            <div>
+            <div className="space-y-6">
             {
               jobs.map(j => <AppliedJobSingleCard key={j._id} j={j}></AppliedJobSingleCard>
                

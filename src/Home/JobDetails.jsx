@@ -20,7 +20,8 @@ const JobDetails = () => {
     postedName,
   } = job;
 
-  const handelSubmitJob = async (e) => {
+    const handelSubmitJob = async (e) => {
+    //   if(JobPostingDate==)
     e.preventDefault();
     const form = e.target;
     const name = user?.name;

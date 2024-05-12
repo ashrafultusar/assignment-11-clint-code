@@ -2,9 +2,8 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Authprovider/Authprovider";
 
 const AppliedJobSingleCard = ({ j }) => {
-    const [filter, setFilter] = useState([]);
-    const { user } = useContext(AuthContext) || {};
-// console.log(user)
+    
+
     console.log(j)
     
    
