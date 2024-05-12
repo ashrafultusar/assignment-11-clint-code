@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Authprovider/Authprovider";
 
 const JobDetails = () => {
   const job = useLoaderData();
-  // console.log(job)
+  const { user } = useContext(AuthContext);
+//   console.log(job);
   const {
     _id,
     photo,
@@ -16,18 +19,39 @@ const JobDetails = () => {
     postedName,
   } = job;
 
+  const handelSubmitJob = async (e) => {
+    e.preventDefault();
+    const jobId = _id;
+    const form = e.target;
+    const name = user?.name;
+    const email = user?.email;
+    const cv = form.cv.value;
+
+    const info = { jobId, name, email, cv };
+
+    console.log(info);
+  };
+
   return (
     <div>
       <div className="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center border border-solid p-6 rounded-xl shadow-xl  ">
         <div className="w-full lg:w-1/2 border border-solid p-6 rounded-xl ">
           <div className="lg:max-w-lg">
-            <h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">
-              {JobTitle}
-            </h1>
-            <p className="mt-4 text-gray-600 dark:text-gray-300">
-              {JobDescription}
-                      </p>
-                      <div className="divider"></div>
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">
+                  {JobTitle}
+                </h1>
+                <p className="mt-4 text-gray-600 dark:text-gray-300">
+                  {JobDescription}
+                </p>
+              </div>
+              <div className="bg-green-200 p-1 rounded-full font-bold font-lato">
+                Applicant Number: {JobApplicantsNumber}
+              </div>
+            </div>
+
+            <div className="divider"></div>
             <div className="grid gap-6 mt-8 sm:grid-cols-2">
               <div className="flex items-center text-gray-800 -px-3 dark:text-gray-200">
                 <svg
@@ -66,7 +90,7 @@ const JobDetails = () => {
 
                 <span className="mx-3">Deadline: {ApplicationDeadline}</span>
               </div>
-             
+
               <div className="flex items-center text-gray-800 -px-3 dark:text-gray-200">
                 <svg
                   className="w-5 h-5 mx-3"
@@ -121,12 +145,57 @@ const JobDetails = () => {
                   />
                 </svg>
 
-                <span className="mx-3">
-                  Posted Name: {postedName}
-                </span>
+                <span className="mx-3">Posted Name: {postedName}</span>
               </div>
 
-            
+              <button
+                className="btn"
+                onClick={() =>
+                  document.getElementById("my_modal_1").showModal()
+                }
+              >
+                Apply
+              </button>
+              <dialog id="my_modal_1" className="modal">
+                <div className="modal-box">
+                  <h3 className="font-bold text-lg">Job Title: {JobTitle}</h3>
+
+                  <form onSubmit={handelSubmitJob}>
+                    <label className="input input-bordered flex items-center gap-2 mt-4">
+                      <input
+                        type="text"
+                        className="grow"
+                        name="name"
+                        defaultValue={user.displayName}
+                      />
+                    </label>
+                    <label className="input input-bordered flex items-center gap-2 mt-4">
+                      <input
+                        type="text"
+                        name="email"
+                        className="grow"
+                        defaultValue={user.email}
+                      />
+                    </label>
+                    <label className="input input-bordered flex mt-4 items-center gap-2">
+                      <input
+                        type="text"
+                        name="cv"
+                        className=" grow"
+                        placeholder="Resume link
+                        "
+                      />
+                    </label>
+                    <div className="ml-48 mt-4 ">
+                      <div>
+                        <div method="dialog">
+                          <button className="btn bg-green-500">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </dialog>
             </div>
           </div>
         </div>
