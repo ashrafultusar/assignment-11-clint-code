@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Authprovider/Authprovider";
+import axios from "axios";
 
 const JobDetails = () => {
   const job = useLoaderData();
@@ -21,16 +22,41 @@ const JobDetails = () => {
 
   const handelSubmitJob = async (e) => {
     e.preventDefault();
-    const jobId = _id;
     const form = e.target;
     const name = user?.name;
     const email = user?.email;
-    const cv = form.cv.value;
+      const cv = form.cv.value;
+      const jobId = _id;
+      const phot = photo;
+      const AppllyDeadline = ApplicationDeadline;
+      const JobapplyNumber = JobApplicantsNumber;
+      const Category = JobCategory;
+      const Description = JobDescription;
+      const PostingDate = JobPostingDate;
+      const Title = JobTitle;
+      const postName = postedName;
 
-    const info = { jobId, name, email, cv };
+      const info = { jobId, name, email, cv, phot, AppllyDeadline, JobapplyNumber, Category, Description, PostingDate, Title, postName };
+      
+      console.log(info)
 
-    console.log(info);
-  };
+      try {
+          const { data } = await axios.post('http://localhost:5000/apply', info)
+          console.log(data)
+          
+      } catch (err){
+          console.log(err.message)
+      }
+      
+      
+      
+      
+      
+      
+    };
+    
+
+
 
   return (
     <div>
@@ -189,7 +215,7 @@ const JobDetails = () => {
                     <div className="ml-48 mt-4 ">
                       <div>
                         <div method="dialog">
-                          <button className="btn bg-green-500">Submit</button>
+                         <button className="btn bg-green-500">Submit</button>
                         </div>
                       </div>
                     </div>

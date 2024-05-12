@@ -1,6 +1,6 @@
 const Blogs = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <div className="bg-[#fff2f2] p-8 rounded-lg mb-10 mt-10">
         <h1 className="text-2xl font-lato font-semibold">
           What is an access token and refresh token? How do they work and where
