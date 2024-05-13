@@ -1,9 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Authprovider/Authprovider";
 import axios from "axios";
+import ReactDatePicker from "react-datepicker";
 
 const JobDetails = () => {
+  // const [startDate, setStartDate] = useState(new Date());
+
+
   const job = useLoaderData();
   const { user } = useContext(AuthContext);
     // console.log(user);
@@ -26,29 +30,32 @@ const JobDetails = () => {
     const form = e.target;
     const name = user?.name;
     const email = user?.email;
-    const cv = form.cv.value;
+      const cv = form.cv.value;
+      // const applyDate=form.startDate.value
     const jobId = _id;
     const phot = photo;
     const AppllyDeadline = ApplicationDeadline;
     const JobapplyNumber = JobApplicantsNumber;
     const Category = JobCategory;
     const Description = JobDescription;
-    const PostingDate = JobPostingDate;
+    // const PostingDate = JobPostingDate;
     const Title = JobTitle;
       const postName = postedName;
       const Salary = Salaryrange;
+    
 
     const info = {
       jobId,
       name,
       email,
       cv,
+      // applyDate,
       phot,
       AppllyDeadline,
       JobapplyNumber,
       Category,
       Description,
-      PostingDate,
+      // PostingDate,
       Title,
       postName,Salary
     };
@@ -179,7 +186,7 @@ const JobDetails = () => {
                 <span className="mx-3">Posted Name: {postedName}</span>
               </div>
 
-              <button
+              {/* <button
                 className="btn"
                 onClick={() =>
                   document.getElementById("my_modal_1").showModal()
@@ -208,6 +215,7 @@ const JobDetails = () => {
                         defaultValue={user.email}
                       />
                     </label>
+
                     <label className="input input-bordered flex mt-4 items-center gap-2">
                       <input
                         type="text"
@@ -217,6 +225,15 @@ const JobDetails = () => {
                         "
                       />
                     </label>
+
+                    <span className="my-4 text-center">
+                    <ReactDatePicker
+                      className="border p-2 rounded-md"
+                      selected={startDate}
+                      onChange={(date) => setStartDate(date)}
+                    />
+                  </span>
+
                     <div className="ml-48 mt-4 ">
                       <div>
                         <div method="dialog">
@@ -226,7 +243,66 @@ const JobDetails = () => {
                     </div>
                   </form>
                 </div>
-              </dialog>
+              </dialog> */}
+
+<button
+  className="btn"
+  onClick={() => document.getElementById("my_modal_1").showModal()}
+>
+  Apply
+</button>
+<dialog id="my_modal_1" className="modal">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">Job Title: {JobTitle}</h3>
+    <form onSubmit={handelSubmitJob}>
+      <label className="input input-bordered flex items-center gap-2 mt-4">
+        <input
+          type="text"
+          className="grow"
+          name="name"
+          defaultValue={user.displayName}
+        />
+      </label>
+      <label className="input input-bordered flex items-center gap-2 mt-4">
+        <input
+          type="text"
+          name="email"
+          className="grow"
+          defaultValue={user.email}
+        />
+      </label>
+      <label className="input input-bordered flex mt-4 items-center gap-2">
+        <input
+          type="text"
+          name="cv"
+          className=" grow"
+          placeholder="Resume link"
+        />
+      </label>
+      {/* <span className="my-4 text-center">
+        <ReactDatePicker
+          className="border p-2 rounded-md"
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+        />
+      </span> */}
+      <div className="ml-48 mt-4 ">
+        <div method="dialog">
+          <button
+            className="btn bg-green-500"
+            onClick={() => {
+              document.getElementById("my_modal_1").close();
+            }}
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</dialog>
+
+
             </div>
           </div>
         </div>

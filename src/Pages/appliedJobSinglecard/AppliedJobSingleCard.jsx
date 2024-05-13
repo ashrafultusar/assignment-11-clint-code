@@ -4,7 +4,7 @@ import { AuthContext } from "../../Authprovider/Authprovider";
 const AppliedJobSingleCard = ({ j }) => {
     
 
-    console.log(j)
+    // console.log(j)
     
    
 
