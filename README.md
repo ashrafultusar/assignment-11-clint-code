@@ -15,6 +15,7 @@ Category: assignment_category_0003
 
 => And a Bayer can post jobs by going to the add job route to find employees for his project and must register or login to take advantage of this facility.
 
+<br>
 
 
 
@@ -22,8 +23,7 @@ Category: assignment_category_0003
 
 
 
-
-The technology used in the development of this project:
+<h1>The technology used in the development of this project:</h1>
 
 => React tabs
 
