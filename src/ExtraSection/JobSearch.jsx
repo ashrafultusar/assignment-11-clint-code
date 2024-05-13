@@ -1,6 +1,7 @@
 import { MdContentPasteSearch } from "react-icons/md";
 import { SiReaddotcv } from "react-icons/si";
 import { IoMdMailOpen } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const JobSearch = () => {
   return (
@@ -43,7 +44,12 @@ const JobSearch = () => {
 
         <div className="flex items-center justify-center w-full lg:w-1/2">
           <div className="rounded-xl lg:mb-4">
-            <img src="https://i.ibb.co/RhgQRnW/howre.png" alt="" />
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              src="https://i.ibb.co/RhgQRnW/howre.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
