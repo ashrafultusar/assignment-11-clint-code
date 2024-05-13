@@ -1,28 +1,67 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
+import axios, { all } from "axios";
+import { AuthContext } from "../Authprovider/Authprovider";
+import { toast } from "react-toastify";
 
 const UpdateJob = () => {
   const navigate = useNavigate();
   const job = useLoaderData();
-
+  const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
-  const [deadlineDate, setDeadlineDate] = useState(new Date());
+ 
 
   console.log(job);
-  const {
-    title,
-    email,
-    description,
-    maxsalary,
-    minsalary,
-    name,
-  } = job;
+  const { _id,title, email, description, maxsalary, minsalary, deadline,name } = job;
 
+  const [deadlineDate, setDeadlineDate] = useState(new Date(deadline));
     
-    
-    
-    
+  const handelUpdate = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const photo = form.image.value;
+    const JobTitle = form.job_title.value;
+    const email = user.email;
+    const postedName = form.name.value;
+    const minsalary = form.minsalary.value;
+    const maxsalary = form.maxsalary.value;
+    const JobCategory = form.category.value;
+    const JobDescription = form.description.value;
+    const JobPostingDate = startDate;
+    const ApplicationDeadline = deadlineDate;
+
+    const allInfo = {
+      photo,
+      JobTitle,
+      email,
+      JobCategory,
+      JobDescription,
+      JobPostingDate,
+      ApplicationDeadline,
+      minsalary,
+      maxsalary,
+      postedName,
+    };
+
+    //   console.log(allInfo);
+      
+      try {
+          const { data } = await axios.put(`${import.meta.env.VITE_API_URL}/job/${_id}`, allInfo)
+          console.log(data)
+          toast.success('Update Successful')
+          navigate('/my-job')
+          
+      } catch (err) {
+          console.log(err)
+          toast.error(err.message)
+}
+
+
+
+
+  };
+
   return (
     <div>
       <h1 className="text-xl md:text-4xl text-center">
@@ -32,7 +71,7 @@ const UpdateJob = () => {
       <div>
         <div className="flex justify-center items-center min-h-[calc(100vh-306px)] my-12">
           <section className=" p-2 md:p-6 mx-auto bg-white rounded-md shadow-md ">
-            <form>
+            <form onSubmit={handelUpdate}>
               <div>
                 <label className="text-gray-700 " htmlFor="url">
                   Job URL
