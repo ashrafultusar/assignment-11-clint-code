@@ -4,6 +4,7 @@ import { AuthContext } from "../Authprovider/Authprovider";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
 import { FaEyeSlash, FaRegEye } from "react-icons/fa";
+import axios from "axios";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -35,7 +36,15 @@ const Register = () => {
       const result = await creatUser(email, password);
       console.log(result);
       await updateProfile(name, photo);
-      setUser({ ...user, photoUrl: photo, displayName: name });
+      setUser({ ...result, photoUrl: photo, displayName: name });
+
+      console.log(result.user)
+      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, { email: result?.user?.email }, {
+        withCredentials: true
+      })
+      console.log(data)
+
+
       navigate("/");
       toast.success("SignUp Successful");
     } catch (err) {

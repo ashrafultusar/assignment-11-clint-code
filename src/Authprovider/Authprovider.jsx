@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 
 export const AuthContext = createContext();
@@ -41,8 +42,12 @@ const Authprovider = ({children}) => {
 
 
     // logout
-    const logOut = () => {
+    const logOut =async () => {
         setUser(null)
+        const { data } = await axios(`${import.meta.env.VITE_API_URL}/logout`, {
+            withCredentials: true
+        })
+        console.log(data)
       signOut(auth)
       toast.success('Succesfully LogOut')
     }

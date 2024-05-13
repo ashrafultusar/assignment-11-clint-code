@@ -3,6 +3,7 @@ import { FaEyeSlash, FaGithub, FaGoogle, FaRegEye } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Authprovider/Authprovider";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,7 +23,12 @@ const Login = () => {
     try {
       // user login
       const result = await signIn(email, password)
-      console.log(result)
+      
+     console.log(result.user)
+      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, { email: result?.user?.email }, {
+        withCredentials: true
+      })
+      console.log(data)
       navigate('/')
       toast.success("Signin Successful");
     }
@@ -38,7 +44,14 @@ toast.error(err?.message)
   // google sign in
   const handelGooglesignIn = async() => {
     try {
-      await signInGoogle()
+      const result = await signInGoogle()
+
+      console.log(result.user)
+      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, { email: result?.user?.email }, {
+        withCredentials: true
+      })
+      console.log(data)
+
       toast.success("SignIn Successful");
       navigate('/')
     }
@@ -51,7 +64,14 @@ toast.error(err?.message)
   // github login
   const handelGithubLogin = async() => {
     try {
-      await signInGithub()
+      const result = await signInGithub()
+      
+      console.log(result.user)
+      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, { email: result?.user?.email }, {
+        withCredentials: true
+      })
+      console.log(data)
+
       toast.success("SignIn Successful");
       navigate('/')
     }

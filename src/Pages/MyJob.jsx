@@ -15,7 +15,7 @@ const MyJob = () => {
     // refresh Ui
   const getData = async () => {
     const { data } = await axios(
-      `${import.meta.env.VITE_API_URL}/jobs/${user?.email}`
+      `${import.meta.env.VITE_API_URL}/jobs/${user?.email}`,{withCredentials:true}
     );
     setJobs(data);
   };
@@ -120,11 +120,11 @@ const MyJob = () => {
                            <img className="w-24" src={j.photo} alt="" />
                           </td>
                           <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                           {j.title}
+                           {j.JobTitle}
                           </td>
 
                           <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                            {j.description}
+                            {j.JobDescription}
                           </td>
 
                           <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
@@ -136,7 +136,7 @@ const MyJob = () => {
                                 className="px-3 py-1 rounded-full text-blue-500 bg-blue-100/60
                                                  text-xs"
                               >
-                                {j.category}
+                                {j.JobCategory}
                               </p>
                             </div>
                           </td>
@@ -144,13 +144,13 @@ const MyJob = () => {
                             title=""
                             className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap"
                           >
-                           {j.deadline}
+                           {j.ApplicationDeadline}
                           </td>
                           <td
                             title=""
                             className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap"
                           >
-                           {j.name}
+                           {j.postedName}
                           </td>
                               <td className="px-4 py-4 text-sm whitespace-nowrap">
                               <button onClick={()=>handelDelete(j._id)} className="text-gray-500 transition-colors duration-200   hover:text-red-500 focus:outline-none">
