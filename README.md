@@ -19,15 +19,27 @@ Category: assignment_category_0003
 
 
 
+
+
+
+
 The technology used in the development of this project:
 
 => React tabs
+
 => Swiper slider
+
 => Framer Motion
+
 => Meraki ui
+
 => Node js
+
 => MongoDb 
+
 => DaisyUi
+
 => Tailwind CSS
+
 => React js
 
