@@ -3,14 +3,14 @@ import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Authprovider/Authprovider";
 import axios from "axios";
 import ReactDatePicker from "react-datepicker";
+import { toast } from "react-toastify";
 
 const JobDetails = () => {
-  // const [startDate, setStartDate] = useState(new Date());
-
+  const [startDate, setStartDate] = useState(new Date());
 
   const job = useLoaderData();
   const { user } = useContext(AuthContext);
-    // console.log(user);
+  // console.log(user);
   const {
     _id,
     photo,
@@ -20,54 +20,61 @@ const JobDetails = () => {
     JobDescription,
     JobPostingDate,
     JobTitle,
-    Salaryrange,
+    maxsalary,minsalary,
     postedName,
   } = job;
 
-    const handelSubmitJob = async (e) => {
-    //   if(JobPostingDate==)
+  const handelSubmitJob = async (e) => {
     e.preventDefault();
     const form = e.target;
     const name = user?.name;
     const email = user?.email;
-      const cv = form.cv.value;
-      // const applyDate=form.startDate.value
+    const PostingDate = JobPostingDate;
+        // if (applyDate === AppllyDeadline) return toast.error("apply date is over");
+    const cv = form.cv.value;
+    const applyDate = startDate;
+  
     const jobId = _id;
     const phot = photo;
     const AppllyDeadline = ApplicationDeadline;
     const JobapplyNumber = JobApplicantsNumber;
     const Category = JobCategory;
     const Description = JobDescription;
-    // const PostingDate = JobPostingDate;
     const Title = JobTitle;
-      const postName = postedName;
-      const Salary = Salaryrange;
-    
+    const postName = postedName;
+    const min = minsalary;
+    const max = maxsalary;
 
     const info = {
       jobId,
       name,
       email,
       cv,
-      // applyDate,
+      applyDate,
       phot,
       AppllyDeadline,
       JobapplyNumber,
       Category,
       Description,
-      // PostingDate,
+      PostingDate,
       Title,
-      postName,Salary
+      postName,
+      min,max
     };
 
     console.log(info);
-
+ 
     try {
       const { data } = await axios.post("http://localhost:5000/apply", info);
       console.log(data);
+      if (data?.insertedId) {
+        toast.success('successfully apply')
+      }
     } catch (err) {
       console.log(err.message);
     }
+
+    
   };
 
   return (
@@ -145,7 +152,7 @@ const JobDetails = () => {
                   />
                 </svg>
 
-                <span className="mx-3">Salaryrange: {Salaryrange}</span>
+                <span className="mx-3">Salaryrange: ${minsalary} - ${ maxsalary}</span>
               </div>
 
               <div className="flex items-center text-gray-800 -px-3 dark:text-gray-200">
@@ -186,7 +193,8 @@ const JobDetails = () => {
                 <span className="mx-3">Posted Name: {postedName}</span>
               </div>
 
-              {/* <button
+
+              <button
                 className="btn"
                 onClick={() =>
                   document.getElementById("my_modal_1").showModal()
@@ -197,7 +205,6 @@ const JobDetails = () => {
               <dialog id="my_modal_1" className="modal">
                 <div className="modal-box">
                   <h3 className="font-bold text-lg">Job Title: {JobTitle}</h3>
-
                   <form onSubmit={handelSubmitJob}>
                     <label className="input input-bordered flex items-center gap-2 mt-4">
                       <input
@@ -215,94 +222,40 @@ const JobDetails = () => {
                         defaultValue={user.email}
                       />
                     </label>
-
                     <label className="input input-bordered flex mt-4 items-center gap-2">
                       <input
                         type="text"
                         name="cv"
                         className=" grow"
-                        placeholder="Resume link
-                        "
+                        placeholder="Resume link"
                       />
                     </label>
-
-                    <span className="my-4 text-center">
-                    <ReactDatePicker
-                      className="border p-2 rounded-md"
-                      selected={startDate}
-                      onChange={(date) => setStartDate(date)}
-                    />
-                  </span>
-
+                    <div className=" my-4">
+                    <p className="mb-1">Today date</p>
+                      <span className="my-4 text-center">
+                        
+                        <ReactDatePicker
+                          className="border p-2 rounded-md"
+                          selected={startDate}
+                          onChange={(date) => setStartDate(date)}
+                        />
+                      </span>
+                    </div>
                     <div className="ml-48 mt-4 ">
-                      <div>
-                        <div method="dialog">
-                          <button className="btn bg-green-500">Submit</button>
-                        </div>
+                      <div method="dialog">
+                        <button
+                          className="btn bg-green-500"
+                          onClick={() => {
+                            document.getElementById("my_modal_1").close();
+                          }}
+                        >
+                          Submit
+                        </button>
                       </div>
                     </div>
                   </form>
                 </div>
-              </dialog> */}
-
-<button
-  className="btn"
-  onClick={() => document.getElementById("my_modal_1").showModal()}
->
-  Apply
-</button>
-<dialog id="my_modal_1" className="modal">
-  <div className="modal-box">
-    <h3 className="font-bold text-lg">Job Title: {JobTitle}</h3>
-    <form onSubmit={handelSubmitJob}>
-      <label className="input input-bordered flex items-center gap-2 mt-4">
-        <input
-          type="text"
-          className="grow"
-          name="name"
-          defaultValue={user.displayName}
-        />
-      </label>
-      <label className="input input-bordered flex items-center gap-2 mt-4">
-        <input
-          type="text"
-          name="email"
-          className="grow"
-          defaultValue={user.email}
-        />
-      </label>
-      <label className="input input-bordered flex mt-4 items-center gap-2">
-        <input
-          type="text"
-          name="cv"
-          className=" grow"
-          placeholder="Resume link"
-        />
-      </label>
-      {/* <span className="my-4 text-center">
-        <ReactDatePicker
-          className="border p-2 rounded-md"
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-        />
-      </span> */}
-      <div className="ml-48 mt-4 ">
-        <div method="dialog">
-          <button
-            className="btn bg-green-500"
-            onClick={() => {
-              document.getElementById("my_modal_1").close();
-            }}
-          >
-            Submit
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</dialog>
-
-
+              </dialog>
             </div>
           </div>
         </div>

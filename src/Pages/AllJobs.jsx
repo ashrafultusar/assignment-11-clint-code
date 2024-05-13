@@ -4,7 +4,7 @@ import JobCard from "../Home/JobCard";
 const AllJobs = () => {
 
     const jobs = useLoaderData();
-    // console.log(jobs)
+    console.log(jobs)
 
     return (
         <div className="my-14 container mx-auto">

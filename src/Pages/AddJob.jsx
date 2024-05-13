@@ -3,10 +3,11 @@ import { AuthContext } from "../Authprovider/Authprovider";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
 
 const AddJob = () => {
   const [startDate, setStartDate] = useState(new Date());
-  // const [deadlineDate, setDeadlineDate] = useState(new Date());
+  const [deadlineDate, setDeadlineDate] = useState(new Date());
 
   const { user } = useContext(AuthContext);
   // console.log(user);
@@ -14,23 +15,36 @@ const AddJob = () => {
 
   const handelAddJob = async e => {
     e.preventDefault()
-    const form = e.target
-    const image= form.image.value
-    const title= form.job_title.value
-    const email= form.email.value
-    // const salry= parseFloat(form.salary.value)
-    const category= form.category.value
-    const description= form.description.value
-    const postingDate= form.startDate.value
-    // const deadline= form.deadlineDate.value
-
+    const form = e.target 
+    const photo= form.image.value
+    const JobTitle= form.job_title.value
+    const email= user.email
+    const postedName= form.name.value
+    const minsalary= form.minsalary.value
+    const maxsalary= form.maxsalary.value
+    const JobCategory= form.category.value
+    const JobDescription= form.description.value
+    const JobPostingDate= startDate
+    const ApplicationDeadline = deadlineDate
+    
     const allInfo = {
-      image,title,email,category,description,postingDate,deadline
+      photo,JobTitle,email,JobCategory,JobDescription,JobPostingDate,ApplicationDeadline,minsalary,maxsalary,postedName
     }
     
     console.log(allInfo)
 
-}
+
+    try {
+      const { data } = await axios.post("http://localhost:5000/addjob", allInfo);
+      console.log(data);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+
+
+
 
 
   return (
@@ -53,9 +67,7 @@ const AddJob = () => {
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                 />
               </div>
-
-              <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
-                <div>
+              <div>
                   <label className="text-gray-700 " htmlFor="job_title">
                     Job Title
                   </label>
@@ -66,6 +78,8 @@ const AddJob = () => {
                     className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                   />
                 </div>
+              <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+              
 
                 <div>
                   <label className="text-gray-700 " htmlFor="emailAddress">
@@ -97,12 +111,23 @@ const AddJob = () => {
                
                 <div>
                   <label className="text-gray-700 " htmlFor="min_price">
-                   Salary Range
+                  Minimum Salary
                   </label>
                   <input
                     id="min_price"
-                    name="description"
-                    type="text"
+                    name="minsalary"
+                    type="number"
+                    className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+                  />
+                </div>
+                <div>
+                  <label className="text-gray-700 " htmlFor="min_price">
+                  Maximum Range
+                  </label>
+                  <input
+                    id="min_price"
+                    name="maxsalary"
+                    type="number"
                     className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                   />
                 </div>
@@ -153,17 +178,17 @@ const AddJob = () => {
                   <label className="text-gray-700  " htmlFor="min_price">
                     Application Deadline
                   </label>
-                  {/* <div>
+                  <div>
                     <DatePicker
                       className="border p-2 rounded-md"
                       selected={startDate}
                       onChange={(date) => setDeadlineDate(date)}
                     />
-                  </div> */}
+                  </div>
                 </div>
               </div>
 
-              <div className="flex justify-end mt-6">
+              <div className="flex justify-center mt-6">
                 <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-green-500 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
                   Add Job
                 </button>

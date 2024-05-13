@@ -2,20 +2,10 @@ import logo from '../../src/assets/logo.jpg'
 
 const Footer = () => {
   return (
-    <div> 
-      <footer className="footer p-10 bg-[#02251e] text-neutral-content">
+    <div className='bg-[#02251e]'> 
+      <footer className="footer container mx-auto p-10  text-neutral-content">
         <aside>
-        {/* <svg
-            width="50"
-            height="50"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            fillRule="evenodd"
-            clipRule="evenodd"
-            className="fill-current"
-          >
-            
-          </svg> */}
+      
           <img className='w-24 rounded-full ' src={logo} alt="" />
           <p>
             <span className="font-semibold text-yellow-100">CAREERNESTLE</span> Industries Ltd.

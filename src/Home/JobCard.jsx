@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 
 const JobCard = ({ job }) => {
-  // console.log(job);
+  console.log(job);
 
   const {_id,
     postedName,
     JobTitle,
     JobPostingDate,
     ApplicationDeadline,
-    Salaryrange,
+    min = parseInt(job.minsalary),
+    max = parseInt(job.maxsalary),
     JobApplicantsNumber,
   } = job || {};
 
@@ -35,7 +36,7 @@ const JobCard = ({ job }) => {
           </p>
 
           <p className="mt-2 text-sm font-bold text-gray-600 ">
-            Range: {Salaryrange}
+            Range: ${min } - ${max}
           </p>
           <div className="flex justify-between items-center ">
             <p>Posted: {postedName}</p>
