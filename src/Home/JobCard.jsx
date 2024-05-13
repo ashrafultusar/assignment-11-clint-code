@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const JobCard = ({ job }) => {
-  console.log(job);
+  // console.log(job);
 
   const {_id,
     postedName,

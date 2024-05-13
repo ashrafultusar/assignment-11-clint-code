@@ -1,6 +1,10 @@
-const PopularJobCatagories = () => {
+import { motion } from "framer-motion"
+
+
+const PopularJobCatagories = ({ isVisible }) => {
   return (
     <div className="my-10 container mx-auto ">
+         <motion.div animate={{ opacity: isVisible ? 1 : 0 }} />
       <h1 className="text-4xl font-lato font-bold my-6 text-center">
        Find Popular Job 
       </h1>
