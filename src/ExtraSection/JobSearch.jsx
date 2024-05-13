@@ -4,7 +4,7 @@ import { IoMdMailOpen } from "react-icons/io";
 
 
 const JobSearch = () => {
-  return (
+  return ( 
     <div className="container mx-auto my-10">
       <div className=" flex  gap-10">
         <div className="rounded-xl">
