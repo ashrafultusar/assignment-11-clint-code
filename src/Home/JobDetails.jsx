@@ -204,7 +204,7 @@ console.log(PostingDate,ApplicationDeadline)
               </div>
 
               <button
-                className="btn"
+                className="btn bg-green-500 text-black"
                 onClick={() =>
                   document.getElementById("my_modal_1").showModal()
                 }
