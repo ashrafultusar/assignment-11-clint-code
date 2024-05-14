@@ -35,7 +35,7 @@ const AddJob = () => {
 
 
     try {
-      const { data } = await axios.post("http://localhost:5000/addjob", allInfo);
+      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/addjob`, allInfo);
       console.log(data);
     } catch (err) {
       console.log(err.message);

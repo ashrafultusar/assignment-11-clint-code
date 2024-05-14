@@ -65,7 +65,7 @@ const JobDetails = () => {
     console.log(info);
  
     try {
-      const { data } = await axios.post("http://localhost:5000/apply", info);
+      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/apply`, info);
       console.log(data);
       if (data?.insertedId) {
         toast.success('successfully apply')
