@@ -2,8 +2,10 @@ import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Authprovider/Authprovider";
 import axios from "axios";
+import "react-datepicker/dist/react-datepicker.css";
 import ReactDatePicker from "react-datepicker";
 import { toast } from "react-toastify";
+
 
 const JobDetails = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -31,11 +33,10 @@ const JobDetails = () => {
     const name = user?.name;
     const email = user?.email;
     const PostingDate = JobPostingDate;
-    // if (ApplicationDeadline < PostingDate)
-    //   return toast.error("apply date is over");
     const cv = form.cv.value;
     const applyDate = startDate;
 
+if( new Date(applyDate)>new Date(ApplicationDeadline)) return toast.error("apply date is over");
     const jobId = _id;
     const phot = photo;
     const AppllyDeadline = ApplicationDeadline;
@@ -46,6 +47,9 @@ const JobDetails = () => {
     const postName = postedName;
     const min = minsalary;
     const max = maxsalary;
+console.log(PostingDate,ApplicationDeadline)
+
+
 
     const info = {
       jobId,
@@ -118,7 +122,7 @@ const JobDetails = () => {
                   />
                 </svg>
 
-                <span className="mx-3">PostingDate: {JobPostingDate}</span>
+                <span className="mx-3">PostingDate: {new Date(JobPostingDate).toLocaleDateString()}</span>
               </div>
 
               <div className="flex items-center text-gray-800 -px-3 dark:text-gray-200">
@@ -137,7 +141,7 @@ const JobDetails = () => {
                   />
                 </svg>
 
-                <span className="mx-3">Deadline: {ApplicationDeadline}</span>
+                <span className="mx-3">Deadline: {new Date(ApplicationDeadline).toLocaleDateString() }</span>
               </div>
 
               <div className="flex items-center text-gray-800 -px-3 dark:text-gray-200">
@@ -245,7 +249,7 @@ const JobDetails = () => {
                         />
                       </span>
                     </div>
-                    <div className="ml-48 mt-4 ">
+                    <div className="ml-40 mt-4 ">
                       <div method="dialog">
                         <button
                           className="btn bg-green-500"
@@ -255,6 +259,11 @@ const JobDetails = () => {
                         >
                           Submit
                         </button>
+                        <Link to={"/all-job"}>
+                          <button className="btn px-4 py-2 ml-4 bg-red-500">
+                            Cancel
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </form>

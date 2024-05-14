@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion"
+
 
 const JobCard = ({ job }) => {
-  console.log(job);
+  // console.log(job);
 
   const {
     _id,
@@ -55,12 +55,12 @@ const JobCard = ({ job }) => {
           <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
             
 
-            <h1 className="px-2 text-sm">Deadline: { ApplicationDeadline}</h1>
+            <h1 className="px-2 text-sm">Deadline: { new Date(ApplicationDeadline).toLocaleDateString()}</h1>
           </div>
           <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
             
 
-            <h1 className="px-2 text-sm">Posting Date: { JobPostingDate}</h1>
+            <h1 className="px-2 text-sm">Posting Date: {  new Date(JobPostingDate).toLocaleDateString()}</h1>
           </div>
           <Link to={`/job/${_id}`}>
             <button className="bg-green-500 rounded-full px-2 text-sm font-bold font-lato py-1 mt-4 w-full">View Details</button>
