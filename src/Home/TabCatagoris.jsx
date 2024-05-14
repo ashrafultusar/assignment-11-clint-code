@@ -40,7 +40,7 @@ const TabCatagoris = ( ) => {
           <TabPanel>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {
-              jobs.filter(j => j.JobCategory === 'On-Site Job').map(job => <JobCard key={job._id} job={job}></JobCard>)
+              jobs.filter(j => j.JobCategory === 'On-Site').map(job => <JobCard key={job._id} job={job}></JobCard>)
               
             }
            </div>
@@ -48,7 +48,7 @@ const TabCatagoris = ( ) => {
           <TabPanel>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {
-              jobs.filter(j=>j.JobCategory === 'Remote Job').map(job=><JobCard key={job._id} job={job}></JobCard>)
+              jobs.filter(j=>j.JobCategory === 'Remote').map(job=><JobCard key={job._id} job={job}></JobCard>)
             }
          </div>
             

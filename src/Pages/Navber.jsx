@@ -32,7 +32,7 @@ const Navber = () => {
 
   return (
     <div className="bg-[#02251e]">
-      <div className="navbar rounded-lg text-white container mx-auto mb-4">
+      <div className="navbar rounded-lg text-white container mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,7 +53,7 @@ const Navber = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-white bg-[#02251e]  font-lato font-bold rounded-box w-44"
+              className="menu menu-sm z-[1] dropdown-content mt-3 p-2 shadow text-white bg-[#02251e]  font-lato font-bold rounded-box w-44"
             >
               <li>
                 <NavLink to={"/"} activeClassName="active-link"  >Home</NavLink>

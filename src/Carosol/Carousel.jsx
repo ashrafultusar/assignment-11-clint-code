@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 export default function Carousel() {
   return (
-    <div className="container mx-auto  ">
+    <div className="">
     <Swiper
       spaceBetween={30}
       centeredSlides={true}
@@ -32,7 +32,7 @@ export default function Carousel() {
 
       <SwiperSlide>
         <div
-          className="w-full bg-center bg-cover h-[38rem]"
+          className="w-full relative bg-center bg-cover h-[38rem]"
           style={{
             backgroundImage: `url("https://i.ibb.co/YWqNNkw/slider1.webp")`,
           }}

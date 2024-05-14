@@ -44,7 +44,9 @@ const Blogs = () => {
       </div>
 
       <div className="bg-[#fff2f2] p-8 rounded-lg mb-12 ">
-        <p className="text-2xl font-lato font-semibold">What is express js? What is Nest JS ?</p>
+        <p className="text-2xl font-lato font-semibold">
+          What is express js? What is Nest JS ?
+        </p>
         <p>
           Express.js and NestJS are both popular frameworks used for building
           server-side applications in JavaScript/TypeScript, but they have
@@ -62,38 +64,59 @@ const Blogs = () => {
           developers to customize and extend it according to their needs.
           Lightweight: Express.js is lightweight and unopinionated, giving
           developers the freedom to structure their applications as they see
-                  fit.
-                  <h1 className="text-2xl font-lato font-semibold" >What is Nest JS ?</h1>
-                  
-                  <span className="font-bold">Description:</span> NestJS is a progressive Node.js framework
-          for building efficient, reliable, and scalable server-side
-          applications. It is built with TypeScript and heavily inspired by
-                  Angular, sharing some of its design principles and concepts. <br />
-                  <span className="font-bold">Features:</span> Modular and scalable architecture: NestJS encourages a modular and
-          scalable architecture, making it easy to organize and maintain
-          large-scale applications. Dependency injection: NestJS provides a
-          powerful dependency injection system that helps manage the
-          application's components and their dependencies. Built-in support for
-          TypeScript: Since NestJS is built with TypeScript, developers can
-          leverage features like decorators, static typing, and interfaces for
-          building robust applications. Decorators and middleware: NestJS uses
-          decorators extensively for defining controllers, providers,
-          middleware, etc., making the codebase more readable and maintainable.
-          Integration with other libraries: NestJS seamlessly integrates with
-          other libraries and tools commonly used in the Node.js ecosystem.
-          Built-in testing utilities: NestJS comes with built-in testing
-          utilities and support for unit, integration, and end-to-end testing,
-          helping developers ensure the reliability and stability of their
-          applications. In summary, Express.js is a minimalist and flexible
-          framework for building web applications and APIs, while NestJS is a
-          more opinionated and structured framework that provides a modular
-          architecture and built-in support for TypeScript. The choice between
-          them often depends on the specific requirements of the project and the
-          preferences of the development team.
+          fit.
+          <h1 className="text-2xl font-lato font-semibold">
+            What is Nest JS ?
+          </h1>
+          <span className="font-bold">Description:</span> NestJS is a
+          progressive Node.js framework for building efficient, reliable, and
+          scalable server-side applications. It is built with TypeScript and
+          heavily inspired by Angular, sharing some of its design principles and
+          concepts. <br />
+          <span className="font-bold">Features:</span> Modular and scalable
+          architecture: NestJS encourages a modular and scalable architecture,
+          making it easy to organize and maintain large-scale applications.
+          Dependency injection: NestJS provides a powerful dependency injection
+          system that helps manage the application's components and their
+          dependencies. Built-in support for TypeScript: Since NestJS is built
+          with TypeScript, developers can leverage features like decorators,
+          static typing, and interfaces for building robust applications.
+          Decorators and middleware: NestJS uses decorators extensively for
+          defining controllers, providers, middleware, etc., making the codebase
+          more readable and maintainable. Integration with other libraries:
+          NestJS seamlessly integrates with other libraries and tools commonly
+          used in the Node.js ecosystem. Built-in testing utilities: NestJS
+          comes with built-in testing utilities and support for unit,
+          integration, and end-to-end testing, helping developers ensure the
+          reliability and stability of their applications. In summary,
+          Express.js is a minimalist and flexible framework for building web
+          applications and APIs, while NestJS is a more opinionated and
+          structured framework that provides a modular architecture and built-in
+          support for TypeScript. The choice between them often depends on the
+          specific requirements of the project and the preferences of the
+          development team.
         </p>
-          </div>
-          
-         
+      </div>
+      <div className="bg-[#fff2f2] p-8 rounded-lg mb-12 ">
+        <p className="text-2xl font-lato font-semibold">Explain code</p>
+        <p>
+          Row html css javascript along with whatever technologies are used to
+          create this project.
+          <li>React js</li>
+          <li>Node js</li>
+          <li>Express js</li>
+          <li>Mongo DB</li>
+          <li>Tailwind css</li>
+          <li>Row Javascript</li>
+        </p>
+        <h1 className="text-xl font-bold mt-3">NPM package</h1>
+        <li>React Datepicker</li>
+        <li> DaisyUi </li>
+        <li> Meraki ui</li>
+        <li> Framer Motion</li>
+        <li> Swiper slider</li>
+        <li> React tabs</li>
+      </div>
     </div>
   );
 };

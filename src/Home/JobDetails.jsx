@@ -20,7 +20,8 @@ const JobDetails = () => {
     JobDescription,
     JobPostingDate,
     JobTitle,
-    maxsalary,minsalary,
+    maxsalary,
+    minsalary,
     postedName,
   } = job;
 
@@ -30,10 +31,11 @@ const JobDetails = () => {
     const name = user?.name;
     const email = user?.email;
     const PostingDate = JobPostingDate;
-        // if (applyDate === AppllyDeadline) return toast.error("apply date is over");
+    // if (ApplicationDeadline < PostingDate)
+    //   return toast.error("apply date is over");
     const cv = form.cv.value;
     const applyDate = startDate;
-  
+
     const jobId = _id;
     const phot = photo;
     const AppllyDeadline = ApplicationDeadline;
@@ -59,22 +61,24 @@ const JobDetails = () => {
       PostingDate,
       Title,
       postName,
-      min,max
+      min,
+      max,
     };
 
     console.log(info);
- 
+
     try {
-      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/apply`, info);
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/apply`,
+        info
+      );
       console.log(data);
       if (data?.insertedId) {
-        toast.success('successfully apply')
+        toast.success("successfully apply");
       }
     } catch (err) {
       console.log(err.message);
     }
-
-    
   };
 
   return (
@@ -152,7 +156,9 @@ const JobDetails = () => {
                   />
                 </svg>
 
-                <span className="mx-3">Salaryrange: ${minsalary} - ${ maxsalary}</span>
+                <span className="mx-3">
+                  Salaryrange: ${minsalary} - ${maxsalary}
+                </span>
               </div>
 
               <div className="flex items-center text-gray-800 -px-3 dark:text-gray-200">
@@ -193,7 +199,6 @@ const JobDetails = () => {
                 <span className="mx-3">Posted Name: {postedName}</span>
               </div>
 
-
               <button
                 className="btn"
                 onClick={() =>
@@ -231,9 +236,8 @@ const JobDetails = () => {
                       />
                     </label>
                     <div className=" my-4">
-                    <p className="mb-1">Today date</p>
+                      <p className="mb-1">Today date</p>
                       <span className="my-4 text-center">
-                        
                         <ReactDatePicker
                           className="border p-2 rounded-md"
                           selected={startDate}

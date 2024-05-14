@@ -1,22 +1,32 @@
 import { useContext, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
-import axios, { all } from "axios";
 import { AuthContext } from "../Authprovider/Authprovider";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const UpdateJob = () => {
   const navigate = useNavigate();
   const job = useLoaderData();
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
- 
 
   console.log(job);
-  const { _id,title, email, description, maxsalary, minsalary, deadline,name } = job;
+  const {
+    _id,photo,
+    JobTitle,
+    email,
+    JobDescription,
+    maxsalary,
+    minsalary,
+    ApplicationDeadline,
+    postedName,
+  } = job;
 
-  const [deadlineDate, setDeadlineDate] = useState(new Date(deadline));
-    
+  const [deadlineDate, setDeadlineDate] = useState(
+    new Date(ApplicationDeadline)
+  );
+
   const handelUpdate = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -28,8 +38,8 @@ const UpdateJob = () => {
     const maxsalary = form.maxsalary.value;
     const JobCategory = form.category.value;
     const JobDescription = form.description.value;
-    const JobPostingDate = startDate;
-    const ApplicationDeadline = deadlineDate;
+    const JobPostingDate = startDate || {};
+    const ApplicationDeadline = deadlineDate || {};
 
     const allInfo = {
       photo,
@@ -45,21 +55,19 @@ const UpdateJob = () => {
     };
 
     //   console.log(allInfo);
-      
-      try {
-          const { data } = await axios.put(`${import.meta.env.VITE_API_URL}/job/${_id}`, allInfo)
-          console.log(data)
-          toast.success('Update Successful')
-          navigate('/my-job')
-          
-      } catch (err) {
-          console.log(err)
-          toast.error(err.message)
-}
 
-
-
-
+    try {
+      const { data } = await axios.put(
+        `${import.meta.env.VITE_API_URL}/job/${_id}`,
+        allInfo
+      );
+      console.log(data);
+      toast.success("Update Successful");
+      navigate("/my-job");
+    } catch (err) {
+      console.log(err);
+      toast.error(err.message);
+    }
   };
 
   return (
@@ -79,6 +87,7 @@ const UpdateJob = () => {
                 <input
                   id="url"
                   name="image"
+                  defaultValue={photo}
                   type="text"
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                 />
@@ -91,7 +100,7 @@ const UpdateJob = () => {
                   id="job_title"
                   name="job_title"
                   type="text"
-                  defaultValue={title}
+                  defaultValue={JobTitle}
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                 />
               </div>
@@ -115,10 +124,10 @@ const UpdateJob = () => {
                   </label>
                   <input
                     id="email"
-                    type="email"
+                    type="text"
                     name="name"
-                    defaultValue={name}
-                    disabled
+                    defaultValue={postedName}
+                    
                     className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                   />
                 </div>
@@ -170,7 +179,7 @@ const UpdateJob = () => {
                   </label>
                   <input
                     id="min_price"
-                    defaultValue={description}
+                    defaultValue={JobDescription}
                     name="description"
                     type="text"
                     className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"

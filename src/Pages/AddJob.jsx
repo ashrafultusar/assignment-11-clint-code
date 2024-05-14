@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const AddJob = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -31,12 +32,14 @@ const AddJob = () => {
       photo,JobTitle,email,JobCategory,JobDescription,JobPostingDate,ApplicationDeadline,minsalary,maxsalary,postedName
     }
     
+    // console.log(JobCategory)
     console.log(allInfo)
 
 
     try {
       const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/addjob`, allInfo);
       console.log(data);
+      toast.success('job added successfully')
     } catch (err) {
       console.log(err.message);
     }
@@ -89,8 +92,8 @@ const AddJob = () => {
                     id="email"
                     type="email"
                     name="email"
-                    defaultValue={user.email}
-                    disabled
+                    defaultValue={user?.email}
+                    
                     className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                   />
                 </div>
@@ -100,10 +103,10 @@ const AddJob = () => {
                   </label>
                   <input
                     id="email"
-                    type="email"
+                    type="text"
                     name="name"
-                    defaultValue={user.displayName}
-                    disabled
+                    defaultValue={user?.displayName}
+                    
                     className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                   />
                 </div>
@@ -142,10 +145,10 @@ const AddJob = () => {
                     id="category"
                     className="border p-2 rounded-md"
                   >
-                    <option value="Web Development"> On-Site</option>
-                    <option value="Graphics Design">Remote</option>
-                    <option value="Digital Marketing"> Part-Time</option>
-                    <option value="Digital Marketing"> Hybrid</option>
+                    <option value="On-Site"> On-Site</option>
+                    <option value="Remote">Remote</option>
+                    <option value="Part-Time"> Part-Time</option>
+                    <option value="Hybrid"> Hybrid</option>
                   </select>
                 </div>
 
@@ -168,6 +171,7 @@ const AddJob = () => {
                   <div>
                     <DatePicker
                       className="border p-2 rounded-md"
+                     
                       selected={startDate}
                       onChange={(date) => setStartDate(date)}
                     />
