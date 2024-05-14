@@ -1,26 +1,24 @@
-import { motion } from "framer-motion"
-
+import { motion } from "framer-motion";
 
 const PopularJobCatagories = ({ isVisible }) => {
   return (
     <div className="my-10 container mx-auto ">
-         <motion.div animate={{ opacity: isVisible ? 1 : 0 }} />
+      <motion.div animate={{ opacity: isVisible ? 1 : 0 }} />
       <h1 className="text-4xl font-lato font-bold my-6 text-center">
-       Find Popular Job 
+        Find Popular Job
       </h1>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-       
-      <div>
+        <div>
           <div className="card hover:scale-[1.05] bg-[#02251e] shadow-xl">
             <div className="card-body flex items-center text-white">
               <h2 className="card-title">Web Development</h2>
               <p className="font-lato font-bold ">(7 open position)</p>
             </div>
           </div>
-              </div>
-              
-              <div>
+        </div>
+
+        <div>
           <div className="card hover:scale-[1.05] bg-[#02251e] shadow-xl">
             <div className="card-body flex items-center text-white">
               <h2 className="card-title">Digital Marketing</h2>
@@ -28,7 +26,7 @@ const PopularJobCatagories = ({ isVisible }) => {
             </div>
           </div>
         </div>
- 
+
         <div>
           <div className="card hover:scale-[1.05] bg-[#02251e] shadow-xl">
             <div className="card-body flex items-center text-white">
@@ -36,8 +34,8 @@ const PopularJobCatagories = ({ isVisible }) => {
               <p className="font-lato font-bold ">(10 open position)</p>
             </div>
           </div>
-              </div>
-              
+        </div>
+
         <div>
           <div className="card hover:scale-[1.05] bg-[#02251e] shadow-xl">
             <div className="card-body flex items-center text-white">
@@ -45,8 +43,7 @@ const PopularJobCatagories = ({ isVisible }) => {
               <p className="font-lato font-bold ">(11 open position)</p>
             </div>
           </div>
-              </div>
-
+        </div>
 
         <div>
           <div className="card hover:scale-[1.05] bg-[#02251e] shadow-xl">
@@ -55,8 +52,7 @@ const PopularJobCatagories = ({ isVisible }) => {
               <p className="font-lato font-bold ">(10 open position)</p>
             </div>
           </div>
-              </div>
-
+        </div>
 
         <div>
           <div className="card hover:scale-[1.05] bg-[#02251e] shadow-xl">
@@ -65,10 +61,7 @@ const PopularJobCatagories = ({ isVisible }) => {
               <p className="font-lato font-bold ">(10 open position)</p>
             </div>
           </div>
-              </div>
-              
-              
-      
+        </div>
       </div>
     </div>
   );
