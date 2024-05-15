@@ -3,6 +3,7 @@ import { AuthContext } from "../Authprovider/Authprovider";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyJob = () => {
   const { user } = useContext(AuthContext);
@@ -20,21 +21,47 @@ const MyJob = () => {
     setJobs(data);
   };
 
-  const handelDelete = async (id) => {
+  const handleDelete = async (id) => {
     console.log(id);
-    try {
-      const { data } = await axios.delete(
-        `${import.meta.env.VITE_API_URL}/job/${id}`,
-        { withCredentials: true }
-      );
-      console.log(data);
-      toast.success("Delete Successfully");
-      getData();
-    } catch (err) {
-      console.log(err);
-      toast.error(err.message);
+    
+    // Display confirmation dialog
+    const confirmed = await Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    });
+    
+    // If user confirms deletion
+    if (confirmed.isConfirmed) {
+      try {
+        const { data } = await axios.delete(
+          `${import.meta.env.VITE_API_URL}/job/${id}`,
+          { withCredentials: true }
+        );
+        console.log(data);
+        
+        if (data.deletedCount > 0) {
+          // Show success message
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+          
+          // Refresh data or do any necessary actions after deletion
+          getData();
+        } 
+      } catch (err) {
+        console.log(err);
+     
+      }
     }
   };
+  
 
   return (
     <div>
@@ -155,7 +182,7 @@ const MyJob = () => {
                         </td>
                         <td className="px-4 py-4 text-sm whitespace-nowrap">
                           <button
-                            onClick={() => handelDelete(j._id)}
+                            onClick={() => handleDelete(j._id)}
                             className="text-gray-500 transition-colors duration-200   hover:text-red-500 focus:outline-none"
                           >
                             <svg
@@ -195,12 +222,6 @@ const MyJob = () => {
                             </button>
                           </Link>
                         </td>
-
-                        {/* <div className="flex  items-center ">
-                             
-
-                              
-                            </div> */}
                       </tr>
                     ))}
                   </tbody>
