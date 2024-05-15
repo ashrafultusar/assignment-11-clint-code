@@ -6,18 +6,16 @@ const Footer = () => {
     <div className="bg-[#02251e]">
       <footer className="footer container mx-auto p-10  text-neutral-content">
         <aside>
+         
           <img className="w-24 rounded-full " src={logo} alt="" />
+          <p className= "py-2 text-2xl font-bold font-lato">CAREERNESTLE</p>
+        
           <p>
             <span className="font-semibold text-yellow-100">CAREERNESTLE</span>{" "}
             Industries Ltd.
             <br />
           </p>
-          <p>
-            <span className="text-[16px] font-bold">Address:</span>
-            <br />
-            <span>Mirpur ,Dhaka</span>
-            <p>Bangladesh</p>
-          </p>
+         <p className="font-bold font-lato">All right reserved CN</p>
         </aside>
         <nav>
           <h6 className="footer-title">Social</h6>
@@ -40,7 +38,20 @@ const Footer = () => {
                 <FaFacebook />
               </a>
             </a>
+            
           </div>
+          
+          <div className="pt-4">
+            <h1 className="text-[16px] font-bold">contact:</h1>
+            <p>+001235677876</p>
+            <p>+001235677876</p>
+          </div>
+          <p>
+            <span className="text-[16px] font-bold">Address:</span>
+            <br />
+            <span>Mirpur ,Dhaka</span>
+            <p>Bangladesh</p>
+          </p>
         </nav>
       </footer>
     </div>

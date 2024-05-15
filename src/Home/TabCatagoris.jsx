@@ -28,9 +28,9 @@ const TabCatagoris = ( ) => {
             Four Category available for the time being.Browse them by clicking
             on the tabs bellow
           </p>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center text-[17px] font-bold font-lato">
             <TabList>
-              <Tab>On-Site Job</Tab>
+              <Tab >On-Site Job</Tab>
               <Tab>Remote Job</Tab>
               <Tab>Hybrid</Tab>
               <Tab>Part Time</Tab>

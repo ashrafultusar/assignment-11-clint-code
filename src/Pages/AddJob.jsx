@@ -63,7 +63,7 @@ const AddJob = () => {
       </div>
       <div>
         <div className="flex justify-center items-center  my-12">
-          <section className=" p-2 md:p-6 mx-auto bg-white rounded-md shadow-md ">
+          <section className=" p-2 md:p-6 mx-auto bg-white border border-solid rounded-md shadow-md ">
             <form onSubmit={handelAddJob}>
               <div>
                 <label className="text-gray-700 " htmlFor="url">
@@ -71,7 +71,7 @@ const AddJob = () => {
                 </label>
                 <input
                   id="url"
-                  name="image"
+                  name="image" placeholder="input image url" 
                   type="text"
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                 />
@@ -81,7 +81,7 @@ const AddJob = () => {
                     Job Title
                   </label>
                   <input
-                    id="job_title"
+                    id="job_title" placeholder="write job title"
                     name="job_title"
                     type="text"
                     className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"

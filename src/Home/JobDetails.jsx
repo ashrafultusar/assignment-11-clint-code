@@ -253,8 +253,10 @@ console.log(PostingDate,ApplicationDeadline)
                         />
                       </span>
                     </div>
-                    <div className="ml-40 mt-4 ">
+                    <div className=" mt-4 ">
                       <div method="dialog">
+
+                        
                         <button
                           className="btn bg-green-500"
                           onClick={() => {
@@ -268,6 +270,8 @@ console.log(PostingDate,ApplicationDeadline)
                             Cancel
                           </button>
                         </Link>
+                      
+
                       </div>
                     </div>
                   </form>
