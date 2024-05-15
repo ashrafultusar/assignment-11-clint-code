@@ -20,7 +20,7 @@ const JobCard = ({ job }) => {
   // console.log(job);
   return (
     <div  >
-      <div className="w-full  max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+      <div className="w-full hover:scale-[1.05] transition-all max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
         <img src={photo} alt="img" />
 
         <div className="px-6 py-4">

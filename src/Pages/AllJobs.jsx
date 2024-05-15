@@ -1,30 +1,33 @@
 import { useLoaderData } from "react-router-dom";
 import JobCard from "../Home/JobCard";
-import { useEffect, useState } from "react";
-import axios from "axios";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
 // import { useState } from "react";
 
 const AllJobs = () => {
   const jobs = useLoaderData();
   console.log(jobs);
-//   const [search, setSearch] = useState("");
-//   const [job, setJob] = useState([]);
 
-//   useEffect(() => {
-//     const getData = async () => {
-//       const { data } = await axios(
-//         `${import.meta.env.VITE_API_URL}/jobs?&search=${search}`
-//       )setJob(data)
-//     }
-//     getData();
-//   });
+  // const [itemPage, setItempage] = useState(3);
+  // const [count, setCount] = useState(0);
+  // const [jobs, setJobs] = useState([]);
 
-//   const handelSearch = (e) => {
-//     e.preventDefault();
-//     const text = e.target.search.value;
-//     setSearch(text);
-//   };
-//   console.log(search);
+
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const { data } = await axios(`${import.meta.env.VITE_API_URL}/jobs`);
+  //     setJobs(data);
+  //     setCount(data.length)
+  //   };
+  //   getData();
+  // }, []);
+// console.log(count)
+// console.log(jobs)
+
+
+  
+// const pages = [...Array(count/itemPage).keys()].map((e) => e + 1);
+  
 
   return (
     <div className="my-14 container mx-auto">
@@ -43,6 +46,22 @@ const AllJobs = () => {
           <JobCard key={job._id} job={job}></JobCard>
         ))}
       </div>
+
+      {/* paignation */}
+
+      {/* <div className="my-12 text-center">
+        <button className="btn mr-3 bg-green-500">Previous</button>
+
+        {pages.map((btnN) => (
+          <button key={btnN} className="btn bg-slate-400 mr-3">
+            {btnN}
+          </button>
+        ))}
+
+        <button className="bg-green-500 btn">Next</button>
+      </div> */}
+
+
     </div>
   );
 };

@@ -44,9 +44,8 @@ const JobSearch = () => {
 
         <div className="flex items-center justify-center w-full lg:w-1/2">
           <div className="rounded-xl lg:mb-4">
-            <motion.img
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+            <img
+              
               src="https://i.ibb.co/RhgQRnW/howre.png"
               alt=""
             />

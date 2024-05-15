@@ -1,7 +1,7 @@
 const Blogs = () => {
   return (
     <div className="container mx-auto">
-      <div className="bg-[#fff2f2] hover: p-8 rounded-lg mb-10 mt-10">
+      <div className="bg-[#fff2f2] hover:scale-[1.05] transition-all p-8 rounded-lg mb-10 mt-10">
         <h1 className="text-2xl font-lato font-semibold">
           What is an access token and refresh token? How do they work and where
           should we store them on the client side?
@@ -43,7 +43,7 @@ const Blogs = () => {
         </p>
       </div>
 
-      <div className="bg-[#fff2f2] p-8 rounded-lg mb-12 ">
+      <div className="bg-[#fff2f2] hover:scale-[1.05] transition-all p-8 rounded-lg mb-12 ">
         <p className="text-2xl font-lato font-semibold">
           What is express js? What is Nest JS ?
         </p>
@@ -97,7 +97,7 @@ const Blogs = () => {
           development team.
         </p>
       </div>
-      <div className="bg-[#fff2f2] p-8 rounded-lg mb-12 ">
+      <div className="bg-[#fff2f2] hover:scale-[1.05] transition-all p-8 rounded-lg mb-12 ">
         <p className="text-2xl font-lato font-semibold">Explain code</p>
         <p>
           Row html css javascript along with whatever technologies are used to
@@ -117,15 +117,16 @@ const Blogs = () => {
         <li> Swiper slider</li>
         <li> React tabs</li>
         <br />
-      <p> This project is basically an online biased job portal.
-        Here it
-        will help a user to find the job of his choice very easily.Also, a
-        buyer can find employees for any of his upcoming projects.A common
-        user can easily select the job of his choice from the filter option by
-        going to the all job section to find the job of his choice.And a
-        Bayer can post jobs by going to the add job route to find employees for
-        his project and must register or login to take advantage of this
-        facility.</p>
+        <p>
+          {" "}
+          This project is basically an online biased job portal. Here it will
+          help a user to find the job of his choice very easily.Also, a buyer
+          can find employees for any of his upcoming projects.A common user can
+          easily select the job of his choice from the filter option by going to
+          the all job section to find the job of his choice.And a Bayer can post
+          jobs by going to the add job route to find employees for his project
+          and must register or login to take advantage of this facility.
+        </p>
       </div>
     </div>
   );
