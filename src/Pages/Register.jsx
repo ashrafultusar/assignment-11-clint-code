@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
 import { FaEyeSlash, FaRegEye } from "react-icons/fa";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -55,6 +56,10 @@ const Register = () => {
 
   return (
     <div>
+      
+      <Helmet>
+        <title>CAREERNESTLE - Register</title>
+      </Helmet>
       <div className="hero ">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyJob = () => {
   const { user } = useContext(AuthContext);
@@ -65,6 +66,10 @@ const MyJob = () => {
 
   return (
     <div>
+      
+      <Helmet>
+        <title>CAREERNESTLE - My Job</title>
+      </Helmet>
       <section className="container px-4 mx-auto pt-12">
         <div className="flex items-center gap-x-3">
           <h2 className="text-lg font-medium text-gray-800 ">My Posted Jobs</h2>

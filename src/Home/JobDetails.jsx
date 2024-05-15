@@ -5,6 +5,7 @@ import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
 import ReactDatePicker from "react-datepicker";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 
 const JobDetails = () => {
@@ -87,6 +88,9 @@ console.log(PostingDate,ApplicationDeadline)
 
   return (
     <div>
+      <Helmet>
+        <title>CAREERNESTLE - Job Details</title>
+      </Helmet>
       <div className="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center border border-solid p-6 rounded-xl shadow-xl  ">
         <div className="w-full lg:w-1/2 border border-solid p-6 rounded-xl ">
           <div className="lg:max-w-lg">

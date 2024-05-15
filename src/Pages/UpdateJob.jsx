@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import { AuthContext } from "../Authprovider/Authprovider";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const UpdateJob = () => {
   const navigate = useNavigate();
@@ -72,6 +73,10 @@ const UpdateJob = () => {
 
   return (
     <div>
+      
+      <Helmet>
+        <title>CAREERNESTLE - Update Job</title>
+      </Helmet>
       <h1 className="text-xl md:text-4xl text-center">
         Update Your Posted Job
       </h1>

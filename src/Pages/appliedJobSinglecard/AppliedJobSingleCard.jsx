@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Authprovider/Authprovider";
+import { Helmet } from "react-helmet-async";
 
 const AppliedJobSingleCard = ({ j }) => {
     
@@ -26,7 +27,9 @@ const AppliedJobSingleCard = ({ j }) => {
   return (
       <div className="container mx-auto">
           
-
+          <Helmet>
+        <title>CAREERNESTLE - Applied Job</title>
+      </Helmet>
       <div className="overflow-x-auto bg-[#fff2f2] rounded-xl ">
         <table className="table">
           <tbody>

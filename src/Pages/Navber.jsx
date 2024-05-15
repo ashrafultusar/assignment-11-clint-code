@@ -53,7 +53,7 @@ const Navber = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm z-[1] dropdown-content mt-3 p-2 shadow text-white bg-[#02251e]  font-lato font-bold rounded-box w-44"
+              className="menu menu-sm z-10 dropdown-content mt-3 p-2 shadow text-white bg-[#02251e]  font-lato font-bold rounded-box w-44"
             >
               <li>
                 <NavLink to={"/"} activeClassName="active-link"  >Home</NavLink>

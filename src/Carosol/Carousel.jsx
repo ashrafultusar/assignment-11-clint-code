@@ -50,7 +50,7 @@ export default function Carousel() {
               <br />
 
               <Link to={"/all-job"}>
-                <button className="w-full px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
+                <button className=" w-36 px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
                   Find You Job
                 </button>
               </Link>
@@ -80,7 +80,7 @@ export default function Carousel() {
               <br />
 
               <Link to={"/all-job"}>
-                <button className="w-full px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
+                <button className="w-36 px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
                   Find You Job
                 </button>
               </Link>
@@ -110,7 +110,7 @@ export default function Carousel() {
               <br />
 
               <Link to={"/all-job"}>
-                <button className="w-full px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
+                <button className="w-36 px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
                   Find You Job
                 </button>
               </Link>

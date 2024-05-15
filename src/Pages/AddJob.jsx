@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const AddJob = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -52,11 +53,16 @@ const AddJob = () => {
 
   return (
     <div className="container mx-auto text-center mt-7">
+     
+     <Helmet>
+        <title>CAREERNESTLE - Add Job</title>
+      </Helmet>
+     
       <div>
         <h2 className="text-4xl font-lato font-bold">Post a Job</h2>
       </div>
       <div>
-        <div className="flex justify-center items-center min-h-[calc(100vh-306px)] my-12">
+        <div className="flex justify-center items-center  my-12">
           <section className=" p-2 md:p-6 mx-auto bg-white rounded-md shadow-md ">
             <form onSubmit={handelAddJob}>
               <div>

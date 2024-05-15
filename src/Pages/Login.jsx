@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Authprovider/Authprovider";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -86,6 +87,10 @@ toast.error(err?.message)
 
   return (
     <div>
+ <Helmet>
+        <title>CAREERNESTLE - Login</title>
+      </Helmet>
+
       <div className="hero ">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

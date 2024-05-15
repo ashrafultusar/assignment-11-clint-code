@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import JobCard from "../Home/JobCard";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 // import { useEffect, useState } from "react";
 // import axios from "axios";
 // import { useState } from "react";
@@ -49,7 +50,10 @@ const [jobs,setJobs]=useState([])
   return (
     <div className="my-14 container mx-auto">
 
-
+<Helmet>
+        <title>CAREERNESTLE - All Jobs</title>
+      </Helmet>
+      
       <div className="mb-12 text-center">
         <form onSubmit={handelSearch}>
           <input
