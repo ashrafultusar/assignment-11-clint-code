@@ -14,13 +14,13 @@ This project is basically an online biased job portal.
 ## Features
 
 ### Add Job:
-A user can post jobs from this section according to his criteria
+- A user can post jobs from this section according to his criteria
 
 ### My job:
--User can see all his posted jobs here and can update and delete those posts if he wants
+- User can see all his posted jobs here and can update and delete those posts if he wants
 
 ### Applied Job:
--The user can now see all the posts on the site including his uploaded posts and sort them into categories as per his convenience
+- The user can now see all the posts on the site including his uploaded posts and sort them into categories as per his convenience
 
 
 
