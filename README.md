@@ -1,47 +1,24 @@
-Website: CAREERNESTLE
+# CAREERNESTLE
 
-Live Link: https://careernestel.web.app
+[Live Link](https://careernestel.web.app)
 
+## Category: assignment_category_0003
 
+This project is basically an online biased job portal.
 
-Category: assignment_category_0003 
- 
+- It helps a user to find the job of their choice very easily.
+- A buyer can find employees for any of their upcoming projects.
+- A common user can easily select the job of their choice from the filter option by going to the all job section.
+- A buyer can post jobs by going to the add job route to find employees for their project and must register or login to take advantage of this facility.
 
-=> This project is basically an online biased job portal. 
+## The technology used in the development of this project:
 
-=> Here it will help a user to find the job of his choice very easily.
-
-=> Also, a buyer can find employees for any of his upcoming projects
-
-=> A common user can easily select the job of his choice from the filter option by going to the all job section to find the job of his choice.
-
-=> And a Bayer can post jobs by going to the add job route to find employees for his project and must register or login to take advantage of this facility.
-
-<br>
-
-
-
-
-
-
-
-<h1>The technology used in the development of this project:</h1>
-
-=> React tabs
-
-=> Swiper slider
-
-=> Framer Motion
-
-=> Meraki ui
-
-=> Node js
-
-=> MongoDb 
-
-=> DaisyUi
-
-=> Tailwind CSS
-
-=> React js
-
+- React tabs
+- Swiper slider
+- Framer Motion
+- Meraki UI
+- Node.js
+- MongoDB
+- DaisyUI
+- Tailwind CSS
+- React.js
