@@ -22,6 +22,9 @@ const MyJob = () => {
     setJobs(data);
   };
 
+
+
+  
   const handleDelete = async (id) => {
     console.log(id);
     

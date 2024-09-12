@@ -1,13 +1,8 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "../../Authprovider/Authprovider";
+
 import { Helmet } from "react-helmet-async";
 
 const AppliedJobSingleCard = ({ j }) => {
-    
-
-    // console.log(j)
-    
-   
+  // console.log(j)
 
   const {
     phot,
@@ -21,13 +16,11 @@ const AppliedJobSingleCard = ({ j }) => {
     Salary,
   } = j;
 
-    // filter section
-  
-    
+  // filter section
+
   return (
-      <div className="container mx-auto">
-          
-          <Helmet>
+    <div className="container mx-auto">
+      <Helmet>
         <title>CAREERNESTLE - Applied Job</title>
       </Helmet>
       <div className="overflow-x-auto bg-[#fff2f2] rounded-xl ">
@@ -42,7 +35,9 @@ const AppliedJobSingleCard = ({ j }) => {
                     </div>
                   </div>
                   <div>
-                    <div className="font-bold text-black ">Title: <span >{Title}</span></div>
+                    <div className="font-bold text-black ">
+                      Title: <span>{Title}</span>
+                    </div>
                     <div className="text-xl font-bold font-lato opacity-50 text-black">
                       <span className="font-bold font-lato">Description: </span>
                       <span className="text-[16px]">
@@ -61,19 +56,21 @@ const AppliedJobSingleCard = ({ j }) => {
                 <span className="">Salary: {Salary}</span>
               </td>
 
-                          <td className="text-black">Deadline: {AppllyDeadline}
-                          <br />
-                          <br />
-                          <br />
-                          <span>PostingDate: { PostingDate}</span></td>
-             
-                          <td className="text-black">Serial: {JobapplyNumber}
-                              <br />
-                              <br />
-                              <br />
-                              <span> PostedName: { postName}</span>
-                              </td>
-            
+              <td className="text-black">
+                Deadline: {AppllyDeadline}
+                <br />
+                <br />
+                <br />
+                <span>PostingDate: {PostingDate}</span>
+              </td>
+
+              <td className="text-black">
+                Serial: {JobapplyNumber}
+                <br />
+                <br />
+                <br />
+                <span> PostedName: {postName}</span>
+              </td>
             </tr>
           </tbody>
         </table>
