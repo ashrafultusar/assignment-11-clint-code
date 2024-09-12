@@ -26,34 +26,30 @@ const AllJobs = () => {
   // console.log(jobs)
 
   // const pages = [...Array(count/itemPage).keys()].map((e) => e + 1);
-const [jobs,setJobs]=useState([])
-  const [search, setSearch]=useState('')
+  const [jobs, setJobs] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-  
     fetch(`${import.meta.env.VITE_API_URL}/jobs?search=${search}`)
-      .then(res=>res.json())
-       .then(data=>setJobs(data))
-},[search])
+      .then((res) => res.json())
+      .then((data) => setJobs(data));
+  }, [search]);
 
-  console.log(jobs)
+  console.log(jobs);
 
-  const handelSearch = e => {
-    e.preventDefault()
+  const handelSearch = (e) => {
+    e.preventDefault();
     const searchText = e.target.search.value;
     // console.log(searchText)
-    setSearch(searchText)
-}
-
-
+    setSearch(searchText);
+  };
 
   return (
-    <div className="my-14 container mx-auto">
-
-<Helmet>
+    <div className="pt-32 mb-24 container mx-auto">
+      <Helmet>
         <title>CAREERNESTLE - All Jobs</title>
       </Helmet>
-      
+
       <div className="mb-12 text-center">
         <form onSubmit={handelSearch}>
           <input
@@ -62,7 +58,7 @@ const [jobs,setJobs]=useState([])
             placeholder="search.."
             className="input input-bordered w-full max-w-xs"
           />
-         <input type="submit" value='Search' className="bg-green-500 btn"/>
+          <input type="submit" value="Search" className="bg-green-500 btn" />
         </form>
       </div>
 

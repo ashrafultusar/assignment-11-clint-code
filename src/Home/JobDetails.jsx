@@ -87,7 +87,7 @@ console.log(PostingDate,ApplicationDeadline)
   };
 
   return (
-    <div>
+    <div className="pt-32 mb-24">
       <Helmet>
         <title>CAREERNESTLE - Job Details</title>
       </Helmet>
@@ -103,7 +103,7 @@ console.log(PostingDate,ApplicationDeadline)
                   {JobDescription}
                 </p>
               </div>
-              <div className="bg-green-200 p-1 rounded-full font-bold font-lato">
+              <div className="bg-green-200 p-1 rounded-full w-48 text-center font-bold font-lato">
                 Applicant Number: {JobApplicantsNumber}
               </div>
             </div>

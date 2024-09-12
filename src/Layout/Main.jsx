@@ -8,7 +8,7 @@ const Main = () => {
       <div >
           <Navber></Navber>
           
-          <div className="min-h-[calc(100vh-268px)]">
+          <div className="min-h-[calc(100vh-218px)]">
           <Outlet></Outlet>
       </div>
       <Footer></Footer>

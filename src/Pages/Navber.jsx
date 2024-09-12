@@ -8,7 +8,7 @@ const Navber = () => {
 
   return (
     <div className="">
-      <div className="navbar fixed z-10 rounded-lg text-white px-32 bg-[#1f2937]">
+      <div className="navbar fixed z-10  text-white px-32 bg-[#1f2937]">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +29,7 @@ const Navber = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm z-10 dropdown-content mt-3 p-2 shadow text-white bg-[#02251e]  font-lato font-bold rounded-box w-44"
+              className="menu menu-sm z-10 dropdown-content mt-3 p-2 shadow text-white bg-[#1f2937]  font-lato font-bold rounded-box w-44"
             >
               <li>
                 <NavLink to={"/"} activeClassName="active-link">

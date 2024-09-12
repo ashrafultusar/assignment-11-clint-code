@@ -21,9 +21,6 @@ const MyJob = () => {
     );
     setJobs(data);
   };
-
-
-
   
   const handleDelete = async (id) => {
     console.log(id);
@@ -73,7 +70,7 @@ const MyJob = () => {
       <Helmet>
         <title>CAREERNESTLE - My Job</title>
       </Helmet>
-      <section className="container px-4 mx-auto pt-12">
+      <section className="container mx-auto pt-32">
         <div className="flex items-center gap-x-3">
           <h2 className="text-lg font-medium text-gray-800 ">My Posted Jobs</h2>
 
