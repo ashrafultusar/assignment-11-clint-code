@@ -10,7 +10,7 @@ const Home = () => {
   const jobs = useLoaderData();
 
   return (
-    <div className="">
+    <div >
       <Helmet>
         <title>CAREERNESTLE - Home</title>
       </Helmet>

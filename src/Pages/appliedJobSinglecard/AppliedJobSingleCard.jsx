@@ -25,7 +25,7 @@ const AppliedJobSingleCard = ({ j }) => {
       </Helmet>
       <div data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
-          data-aos-duration="1400" className="overflow-x-auto bg-[#ffffff]  transition-transform transform hover:scale-105 rounded-lg overflow-hidden shadow-xl border ">
+          data-aos-duration="1400" className="overflow-x-auto bg-[#ffffff] transition-transform transform hover:scale-105 rounded-lg overflow-hidden shadow-xl border ">
         <table className="table">
           <tbody>
             <tr>

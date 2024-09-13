@@ -135,13 +135,19 @@ const Navber = () => {
                   </div>
                 </div>
               </div>
-              <button onClick={logOut} className="text-white bg-green-500 py-2 px-3 rounded-lg">
-                Log Out
-              </button>
+             
+              <button onClick={logOut} className="w-full relative overflow-hidden bg-transparent border border-white text-white py-1 px-2 rounded transition duration-300 group">
+            <span className="absolute inset-0 bg-white translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+            <span className="relative z-10 group-hover:text-black">Log Out</span>
+          </button>
+
             </div>
           ) : (
             <Link to={"/login"}>
-              <button className="text-white bg-green-500 py-2 px-3 rounded-lg">Login</button>
+               <button className="w-full relative overflow-hidden bg-transparent border border-white text-white py-1 px-2 rounded transition duration-300 group">
+            <span className="absolute inset-0 bg-white translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+            <span className="relative z-10 group-hover:text-black">Login</span>
+          </button>
             </Link>
           )}
         </div>

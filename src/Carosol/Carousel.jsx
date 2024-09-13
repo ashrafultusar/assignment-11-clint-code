@@ -13,10 +13,14 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 
 export default function Carousel() {
-  const img1 = "https://i.ibb.co.com/BCr2Zq5/pexels-designecologist-1779487.jpg";
-  const img2 = "https://i.ibb.co.com/195P5Fm/pexels-thisisengineering-3861958.jpg";
-  const img3 = "https://i.ibb.co.com/v1d3rHm/pexels-jakubzerdzicki-27861839.jpg";
-  const img4 = "https://i.ibb.co.com/QXbPgrh/pexels-tima-miroshnichenko-6549631.jpg";
+  const img1 =
+    "https://i.ibb.co.com/BCr2Zq5/pexels-designecologist-1779487.jpg";
+  const img2 =
+    "https://i.ibb.co.com/195P5Fm/pexels-thisisengineering-3861958.jpg";
+  const img3 =
+    "https://i.ibb.co.com/v1d3rHm/pexels-jakubzerdzicki-27861839.jpg";
+  const img4 =
+    "https://i.ibb.co.com/QXbPgrh/pexels-tima-miroshnichenko-6549631.jpg";
 
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -27,7 +31,9 @@ export default function Carousel() {
   };
 
   return (
-    <div className="w-full h-screen"> {/* Full width and height */}
+    <div className="w-full h-screen">
+      {" "}
+      {/* Full width and height */}
       <Swiper
         direction="vertical" // Vertical sliding
         spaceBetween={30}
@@ -60,13 +66,17 @@ export default function Carousel() {
                   Let's Find Jobs for You
                 </h1>
                 <p className="text-white">
-                  There's no need to look anywhere else. With over 1 million jobs, ZipRecruiter <br />
+                  There's no need to look anywhere else. With over 1 million
+                  jobs, ZipRecruiter <br />
                   is the only site you'll ever need to find your next job.
                 </p>
                 <br />
                 <Link to={"/all-job"}>
-                  <button className="w-36 px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
-                    Find Your Job
+                  <button className="w-36 relative overflow-hidden bg-transparent border border-white text-white py-1 px-2 rounded transition duration-300 group">
+                    <span className="absolute inset-0 bg-white translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+                    <span className="relative z-10 group-hover:text-black">
+                      Find Your Job
+                    </span>
                   </button>
                 </Link>
               </div>
@@ -88,13 +98,17 @@ export default function Carousel() {
                   Let's Find Jobs for You
                 </h1>
                 <p className="text-white">
-                  There's no need to look anywhere else. With over 1 million jobs, ZipRecruiter <br />
+                  There's no need to look anywhere else. With over 1 million
+                  jobs, ZipRecruiter <br />
                   is the only site you'll ever need to find your next job.
                 </p>
                 <br />
                 <Link to={"/all-job"}>
-                  <button className="w-36 px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
-                    Find Your Job
+                  <button className="w-36 relative overflow-hidden bg-transparent border border-white text-white py-1 px-2 rounded transition duration-300 group">
+                    <span className="absolute inset-0 bg-white translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+                    <span className="relative z-10 group-hover:text-black">
+                      Find Your Job
+                    </span>
                   </button>
                 </Link>
               </div>
@@ -116,20 +130,24 @@ export default function Carousel() {
                   Let's Find Jobs for You
                 </h1>
                 <p className="text-white">
-                  There's no need to look anywhere else. With over 1 million jobs, ZipRecruiter <br />
+                  There's no need to look anywhere else. With over 1 million
+                  jobs, ZipRecruiter <br />
                   is the only site you'll ever need to find your next job.
                 </p>
                 <br />
                 <Link to={"/all-job"}>
-                  <button className="w-36 px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
-                    Find Your Job
+                  <button className="w-36 relative overflow-hidden bg-transparent border border-white text-white py-1 px-2 rounded transition duration-300 group">
+                    <span className="absolute inset-0 bg-white translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+                    <span className="relative z-10 group-hover:text-black">
+                      Find Your Job
+                    </span>
                   </button>
                 </Link>
               </div>
             </div>
           </div>
         </SwiperSlide>
-{/* slider 4 */}
+        {/* slider 4 */}
 
         <SwiperSlide>
           <div
@@ -144,13 +162,17 @@ export default function Carousel() {
                   Let's Find Jobs for You
                 </h1>
                 <p className="text-white">
-                  There's no need to look anywhere else. With over 1 million jobs, ZipRecruiter <br />
+                  There's no need to look anywhere else. With over 1 million
+                  jobs, ZipRecruiter <br />
                   is the only site you'll ever need to find your next job.
                 </p>
                 <br />
                 <Link to={"/all-job"}>
-                  <button className="w-36 px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
-                    Find Your Job
+                  <button className="w-36 relative overflow-hidden bg-transparent border border-white text-white py-1 px-2 rounded transition duration-300 group">
+                    <span className="absolute inset-0 bg-white translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+                    <span className="relative z-10 group-hover:text-black">
+                      Find Your Job
+                    </span>
                   </button>
                 </Link>
               </div>
