@@ -35,7 +35,7 @@ const AllJobs = () => {
       .then((data) => setJobs(data));
   }, [search]);
 
-  console.log(jobs);
+  // console.log(jobs);
 
   const handelSearch = (e) => {
     e.preventDefault();
@@ -44,13 +44,21 @@ const AllJobs = () => {
     setSearch(searchText);
   };
 
+  const handelReset = () => {
+    setSearch('')
+  }
+
   return (
     <div className="pt-32 mb-24 container mx-auto">
       <Helmet>
         <title>CAREERNESTLE - All Jobs</title>
       </Helmet>
 
-      <div className="mb-12 text-center">
+      
+
+      <div data-aos="fade-down"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500" className=" text-center">
         <form onSubmit={handelSearch}>
           <input
             name="search"
@@ -59,8 +67,10 @@ const AllJobs = () => {
             className="input input-bordered w-full max-w-xs"
           />
           <input type="submit" value="Search" className="bg-green-500 btn" />
+          <button onClick={handelReset} className="btn bg-green-500 lg:ml-24">Reset</button>
         </form>
       </div>
+      <div className="divider mb-12"></div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
         {jobs.map((job) => (
