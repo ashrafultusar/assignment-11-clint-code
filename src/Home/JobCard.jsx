@@ -25,7 +25,7 @@ const JobCard = ({ job }) => {
 
   console.log(job);
   return (
-    <div
+    <div 
       data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
       data-aos-duration="1500"

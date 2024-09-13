@@ -17,20 +17,22 @@ const AppliedJobSingleCard = ({ j }) => {
   } = j;
 
   // filter section
-
+ 
   return (
     <div className="container mx-auto">
       <Helmet>
         <title>CAREERNESTLE - Applied Job</title>
       </Helmet>
-      <div className="overflow-x-auto bg-[#fff2f2] rounded-xl ">
+      <div data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1400" className="overflow-x-auto bg-[#ffffff]  transition-transform transform hover:scale-105 rounded-lg overflow-hidden shadow-xl border ">
         <table className="table">
           <tbody>
             <tr>
               <td>
                 <div className="flex items-center gap-3">
                   <div className="avatar">
-                    <div className="mask mask-squircle w-40 h-32">
+                    <div className="mask rounded-xl w-40 h-32">
                       <img src={phot} alt="Avatar Tailwind CSS Component" />
                     </div>
                   </div>
@@ -39,16 +41,18 @@ const AppliedJobSingleCard = ({ j }) => {
                       Title: <span>{Title}</span>
                     </div>
                     <div className="text-xl font-bold font-lato opacity-50 text-black">
-                      <span className="font-bold font-lato">Description: </span>
+                      <span className="font-bold font-lato text-black">Description: </span>
                       <span className="text-[16px]">
                         <br />
-                        {Description}
+                        {Description.length > 20
+              ? `${Description.substring(0, 30)}...`
+              : Description}
                       </span>
                     </div>
                   </div>
                 </div>
               </td>
-              <td className="text-black">
+              <td className="text-sm font-bold text-gray-500">
                 Catagory: {Category}
                 <br />
                 <br />
@@ -56,7 +60,7 @@ const AppliedJobSingleCard = ({ j }) => {
                 <span className="">Salary: {Salary}</span>
               </td>
 
-              <td className="text-black">
+              <td className="text-sm font-bold text-gray-500">
                 Deadline: {AppllyDeadline}
                 <br />
                 <br />
@@ -64,7 +68,7 @@ const AppliedJobSingleCard = ({ j }) => {
                 <span>PostingDate: {PostingDate}</span>
               </td>
 
-              <td className="text-black">
+              <td className="text-sm font-bold text-gray-500">
                 Serial: {JobapplyNumber}
                 <br />
                 <br />
