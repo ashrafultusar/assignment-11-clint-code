@@ -4,7 +4,9 @@ import { IoMdMailOpen } from "react-icons/io";
 
 const JobSearch = () => {
   return (
-    <div className="container mx-auto bg-[#F4E1D9] my-12 rounded-xl">
+    <div data-aos="fade-up"
+    data-aos-anchor-placement="top-bottom"
+    data-aos-duration="1500" className="container mx-auto bg-[#F4E1D9] my-12 rounded-xl">
       <div className="flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
           <div>

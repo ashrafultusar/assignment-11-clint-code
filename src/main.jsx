@@ -18,12 +18,14 @@ const queryClint = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HelmetProvider>
+      <div className="overflow-x-hidden overflow-y-hidden">
       <Authprovider>
         <QueryClientProvider client={queryClint}>
           <RouterProvider router={router} />
         </QueryClientProvider>
         <ToastContainer />
       </Authprovider>
+      </div>
     </HelmetProvider>
   </React.StrictMode>
 );

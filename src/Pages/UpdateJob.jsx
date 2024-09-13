@@ -72,16 +72,20 @@ const UpdateJob = () => {
   };
 
   return (
-    <div>
+    <div className="pt-28">
       
       <Helmet>
         <title>CAREERNESTLE - Update Job</title>
       </Helmet>
-      <h1 className="text-xl md:text-4xl text-center">
+      <h1 data-aos="fade-down"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500" className="text-xl md:text-4xl text-center">
         Update Your Posted Job
       </h1>
 
-      <div>
+      <div data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500">
         <div className="flex justify-center items-center min-h-[calc(100vh-306px)] my-12">
           <section className=" p-2 md:p-6 mx-auto bg-white rounded-md shadow-md ">
             <form onSubmit={handelUpdate}>
