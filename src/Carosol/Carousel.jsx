@@ -13,9 +13,10 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 
 export default function Carousel() {
-  const img1 = "https://i.ibb.co/YWqNNkw/slider1.webp";
-  const img2 = "https://i.ibb.co/Hgqwx00/Job-Portal-Website-Development-Signity-Solutions.webp";
-  const img3 = "https://i.ibb.co/23SMtcJ/Getty-Images-1186079153.jpg";
+  const img1 = "https://i.ibb.co.com/BCr2Zq5/pexels-designecologist-1779487.jpg";
+  const img2 = "https://i.ibb.co.com/195P5Fm/pexels-thisisengineering-3861958.jpg";
+  const img3 = "https://i.ibb.co.com/v1d3rHm/pexels-jakubzerdzicki-27861839.jpg";
+  const img4 = "https://i.ibb.co.com/QXbPgrh/pexels-tima-miroshnichenko-6549631.jpg";
 
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -107,6 +108,34 @@ export default function Carousel() {
             className="w-full h-full relative bg-center bg-cover"
             style={{
               backgroundImage: `url("${img3}")`,
+            }}
+          >
+            <div className="flex items-center justify-center w-full h-full bg-gray-900/70">
+              <div className="text-center">
+                <h1 className="text-3xl font-semibold text-white lg:text-4xl">
+                  Let's Find Jobs for You
+                </h1>
+                <p className="text-white">
+                  There's no need to look anywhere else. With over 1 million jobs, ZipRecruiter <br />
+                  is the only site you'll ever need to find your next job.
+                </p>
+                <br />
+                <Link to={"/all-job"}>
+                  <button className="w-36 px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
+                    Find Your Job
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+{/* slider 4 */}
+
+        <SwiperSlide>
+          <div
+            className="w-full h-full relative bg-center bg-cover"
+            style={{
+              backgroundImage: `url("${img4}")`,
             }}
           >
             <div className="flex items-center justify-center w-full h-full bg-gray-900/70">

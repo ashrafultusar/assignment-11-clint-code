@@ -31,7 +31,7 @@ const JobCard = ({ job }) => {
       data-aos-duration="1500"
     >
   
-      <div className="relative max-w-sm rounded-lg overflow-hidden shadow-lg bg-white group">
+      <div className="relative  transition-transform transform hover:scale-105 max-w-sm rounded-lg overflow-hidden shadow-lg bg-white group">
         <div className="relative">
           <img className="w-full h-48 object-cover" src={photo} alt="" />
           <div className="absolute bottom-2 left-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full uppercase">
@@ -47,7 +47,7 @@ const JobCard = ({ job }) => {
           </div>
 
           <Link to={`/job/${_id}`}>
-            <button className="absolute bottom-16 right-32 bg-red-500 text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100  transition-opacity duration-300">
+            <button className="absolute bottom-16 right-32 bg-red-500 text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100  hover:opacity-35  transition-opacity duration-300">
               Read More
             </button>
           </Link>

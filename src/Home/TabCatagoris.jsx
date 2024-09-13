@@ -25,7 +25,7 @@ const TabCatagoris = ( ) => {
           data-aos-anchor-placement="top-bottom"
           data-aos-duration="1500" className="text-4xl font-inter text-[#001751] font-bold text-center pb-1">
             Browse Job by category
-          </h1>
+          </h1> 
           <p data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
           data-aos-duration="1500" className="text-center  md:text-xl text-[#16ccf5] font-lato font-medium mb-16">
