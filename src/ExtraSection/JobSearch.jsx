@@ -1,7 +1,6 @@
 import { MdContentPasteSearch } from "react-icons/md";
 import { SiReaddotcv } from "react-icons/si";
 import { IoMdMailOpen } from "react-icons/io";
-import { motion } from "framer-motion";
 
 const JobSearch = () => {
   return (
