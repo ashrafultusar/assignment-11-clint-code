@@ -20,15 +20,19 @@ const TabCatagoris = ( ) => {
   return (
     <div>
       <Tabs>
-        <div className="container mx-auto my-12">
-          <h1 className="text-4xl font-lato font-bold text-center pb-1">
+        <div className="container mx-auto my-24">
+          <h1 data-aos="fade-down"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500" className="text-4xl font-inter text-[#001751] font-bold text-center pb-1">
             Browse Job by category
           </h1>
-          <p className="text-center font-lato font-bold mb-6">
+          <p data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500" className="text-center  md:text-xl text-[#16ccf5] font-lato font-medium mb-16">
             Four Category available for the time being.Browse them by clicking
             on the tabs bellow
           </p>
-          <div className="flex justify-center items-center text-[17px] font-bold font-lato">
+          <div className="flex mb-6 justify-center text-[#001751] items-center text-[17px] font-bold font-lato">
             <TabList>
               <Tab >On-Site Job</Tab>
               <Tab>Remote Job</Tab>

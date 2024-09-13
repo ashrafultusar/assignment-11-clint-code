@@ -8,6 +8,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+// ..
+AOS.init();
 
 const queryClint = new QueryClient();
 

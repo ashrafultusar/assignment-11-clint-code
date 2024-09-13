@@ -6,11 +6,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 
 const AddJob = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [deadlineDate, setDeadlineDate] = useState(new Date());
-
+const navigate=useNavigate()
   const { user } = useContext(AuthContext);
   // console.log(user);
 
@@ -51,6 +52,7 @@ const AddJob = () => {
       );
       console.log(data);
       toast.success("job added successfully");
+      navigate('/my-job')
     } catch (err) {
       console.log(err.message);
     }
@@ -163,7 +165,7 @@ const AddJob = () => {
                     Job Description
                   </label>
                   <input
-                    id="min_price"
+                    id="description"
                     name="description"
                     type="text"
                     className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
@@ -171,7 +173,7 @@ const AddJob = () => {
                 </div>
 
                 <div>
-                  <label className="text-gray-700 " htmlFor="min_price">
+                  <label className="text-gray-700 " htmlFor="posting_date">
                     Posting Date
                   </label>
                   <div>
@@ -184,13 +186,13 @@ const AddJob = () => {
                 </div>
 
                 <div>
-                  <label className="text-gray-700  " htmlFor="min_price">
+                  <label className="text-gray-700  " htmlFor="application_date">
                     Application Deadline
                   </label>
                   <div>
                     <DatePicker
                       className="border p-2 rounded-md"
-                      selected={startDate}
+                      selected={deadlineDate}
                       onChange={(date) => setDeadlineDate(date)}
                     />
                   </div>
