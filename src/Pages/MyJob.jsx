@@ -71,7 +71,9 @@ const MyJob = () => {
         <title>CAREERNESTLE - My Job</title>
       </Helmet>
       <section className="container mx-auto pt-32">
-        <div className="flex items-center gap-x-3">
+        <div data-aos="fade-down"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500" className="flex items-center gap-x-3">
           <h2 className="text-lg font-medium text-gray-800 ">My Posted Jobs</h2>
 
           <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full ">
@@ -79,12 +81,14 @@ const MyJob = () => {
           </span>
         </div>
 
-        <div className="flex flex-col mt-6">
+        <div data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500" className="flex flex-col mt-6">
           <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
               <div className="overflow-hidden border border-gray-200  md:rounded-lg">
                 <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-[#F4E1D9] ">
+                  <thead className="bg-[] ">
                     <tr>
                       <th
                         scope="col"
@@ -115,7 +119,7 @@ const MyJob = () => {
                         className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right text-black"
                       >
                         <button className="flex items-center gap-x-2">
-                          <span>Price Range</span>
+                          <span>Price</span>
                         </button>
                       </th>
 
@@ -157,7 +161,10 @@ const MyJob = () => {
                         </td>
 
                         <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                          {j.JobDescription}
+                         
+                          {j.JobDescription.length > 20
+              ? `${j.JobDescription.substring(0, 30)}...`
+              : j.JobDescription}
                         </td>
 
                         <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">

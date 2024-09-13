@@ -13,7 +13,7 @@ const TabCatagoris = ( ) => {
       const { data } = await axios(`${import.meta.env.VITE_API_URL}/jobs`)
       setJobs(data)
     }
-    getData()
+    getData() 
   },[])
   // console.log(jobs)
 

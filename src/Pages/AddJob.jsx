@@ -65,9 +65,13 @@ const navigate=useNavigate()
       </Helmet>
 
       <div className="pt-32 mb-3">
-        <h2 className="text-4xl font-lato font-bold">Post a Job</h2>
+        <h2 data-aos="fade-down"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500" className="text-4xl font-lato font-bold mb-4">Post a Job</h2>
       </div>
-      <div className="mb-24">
+      <div data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500" className="mb-24">
         <div className="flex justify-center items-center  ">
           <section className=" p-2 md:p-6 mx-auto bg-white border border-solid rounded-md shadow-md ">
             <form onSubmit={handelAddJob}>

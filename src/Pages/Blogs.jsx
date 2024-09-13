@@ -8,7 +8,9 @@ const Blogs = () => {
         <title>CAREERNESTLE - Bloge</title>
       </Helmet>
 
-      <div className="bg-[#fff2f2] p-7 hover:scale-[1.05] transition-all rounded-lg mb-10 ">
+      <div data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500" className="bg-[#fff2f2] p-7 hover:scale-[1.05] transition-all rounded-lg mb-10 ">
         <h1 className="text-2xl font-lato font-semibold">
           What is an access token and refresh token? How do they work and where
           should we store them on the client side?
@@ -50,7 +52,9 @@ const Blogs = () => {
         </p>
       </div>
 
-      <div className="bg-[#fff2f2] hover:scale-[1.05] transition-all p-8 rounded-lg mb-12 ">
+      <div data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1600" className="bg-[#fff2f2] hover:scale-[1.05] transition-all p-8 rounded-lg mb-12 ">
         <p className="text-2xl font-lato font-semibold">
           What is express js? What is Nest JS ?
         </p>
@@ -104,7 +108,9 @@ const Blogs = () => {
           development team.
         </p>
       </div>
-      <div className="bg-[#fff2f2] hover:scale-[1.05] transition-all p-8 rounded-lg mb-12 ">
+      <div data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1700" className="bg-[#fff2f2] hover:scale-[1.05] transition-all p-8 rounded-lg mb-12 ">
         <p className="text-2xl font-lato font-semibold">Explain code</p>
         <p>
           Row html css javascript along with whatever technologies are used to
